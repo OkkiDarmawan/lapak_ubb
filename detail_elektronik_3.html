@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>makanan 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body >
+    <div class="navbar bg-[#0A254A] flex justify-between items-center">
+        <div class="flex items-center">
+          <img src="resource/Image/logo-ubb.png" alt="" class="size-16 w-20 ml-8"> <!--Logo Lapak UBB-->
+          <!-- Search Barang -->
+          <div class="">
+            <input type="search" name="" id="" class="bg-white w-full lg:w-[800px] rounded-lg  h-10 ml-16 p-4"
+              placeholder="Search The Product Here">
+          </div>
+          <!-- Search Barang End-->
+        </div>
+    
+        <div class="flex items-center">
+          <img src="resource/Image/keranjang.png" alt="" class="size-12 mx-8"> <!--Logo Keranjang-->
+          <div tabindex="0" role="button" class="mr-8" onclick="toggleDropdown()">
+            <div class="w-10 rounded-full">
+              <img alt="Tailwind CSS Navbar component" src="resource/Image/LOGO GUESS.png" class="" />
+            </div>
+          </div>
+          <div id="dropdownMenu" class="absolute right-0 mt-56 w-48 bg-white rounded-lg shadow-lg hidden z-50" >
+            <ul class="py-2">
+              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li>
+              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li>
+              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Logout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    <script src="resource/JS/drop_profile.js"></script>
+    
+      <div class="flex items-center justify-center min-h-[80vh]">
+        <div class="bg-white p-10 rounded-lg shadow-2xl w-full max-w-4xl flex items-center space-x-6">
+          <!-- Gambar Produk -->
+          <img src="resource/Image/box elektronik 3.png" alt="Produk Image" class="w-1/2 rounded-lg">
+          
+          <!-- Konten Teks -->
+          <div>
+            <h2 class="text-4xl font-semibold mb-20">Powerbank Aker 10000 MAH</h2>
+            <p class=" text-4xl font-semibold">Rp 250.000</p>
+            <p class=" text-2xl font-semibold mt-5">Deskripsi : Powerbank Original</p>
+            <p class=" text-2xl font-semibold mt-5">Owner : Jeff Cell</p>
+            <button class="bg-red-600 px-5 rounded-lg mt-14 mx-4 ml-40 text-2xl text-white" onclick="history.back()">Back</button>
+            <button class="bg-[#35ADC6] px-5 rounded-lg mt-14 mx-auto text-2xl text-white">BUY</button>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>

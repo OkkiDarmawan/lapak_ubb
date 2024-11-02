@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .upload-placeholder {
+            width: 100px;
+            height: 100px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .upload-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+        .upload-placeholder:hover {
+            border-color: #35ADC6;
+        }
+        .hidden-input {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+
+    <!-- Page Heading -->
+    <div class="text-2xl font-bold mb-6">Tambah Produk Baru</div>
+
+    <!-- Product Information Form -->
+    <div class="bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-xl font-semibold mb-4">Informasi Produk</h2>
+
+        <!-- Image Upload Section -->
+        <div class="mb-6">
+            <label class="block font-semibold mb-2">Foto Produk</label>
+            <div class="grid grid-cols-4 gap-4">
+                <!-- Image placeholders for uploads with clickable areas -->
+                <div class="upload-placeholder" onclick="document.getElementById('file1').click()">
+                    <span class="text-sm text-gray-500">Foto Utama</span>
+                    <img id="preview1" alt="Preview" class="h-[100%] w-[100%]">
+                    <input type="file" id="file1" class="" onchange="previewImage(event, 'preview1')" accept="image/*" />
+                </div>
+                <div class="upload-placeholder" onclick="document.getElementById('file2').click()">
+                    <span class="text-sm text-gray-500">Foto 1</span>
+                    <img id="preview2" alt="Preview">
+                    <input type="file" id="file2" class="hidden-input" onchange="previewImage(event, 'preview2')" accept="image/*" />
+                </div>
+                <div class="upload-placeholder" onclick="document.getElementById('file3').click()">
+                    <span class="text-sm text-gray-500">Foto 2</span>
+                    <img id="preview3" alt="Preview">
+                    <input type="file" id="file3" class="hidden-input" onchange="previewImage(event, 'preview3')" accept="image/*" />
+                </div>
+                <div class="upload-placeholder" onclick="document.getElementById('file4').click()">
+                    <span class="text-sm text-gray-500">Foto 3</span>
+                    <img id="preview4" alt="Preview">
+                    <input type="file" id="file4" class="hidden-input" onchange="previewImage(event, 'preview4')" accept="image/*" />
+                </div>
+                <!-- Add more placeholders as needed -->
+            </div>
+        </div>
+
+        <!-- Product Video Upload -->
+        <div class="mb-6">
+            <label class="block font-semibold mb-2">Video Produk</label>
+            <div class="upload-placeholder w-full h-24" onclick="document.getElementById('videoFile').click()">
+                <span class="text-sm text-gray-500">Video</span>
+                <input type="file" id="videoFile" class="hidden-input" accept="video/*" />
+            </div>
+            <p class="text-sm text-gray-500 mt-2">
+                1. Ukuran: Maks. 30MB dan resolusi maks. 1280x1280px<br>
+                2. Durasi: 10 detik<br>
+                3. Format: MP4
+            </p>
+        </div>
+
+        <!-- Product Name -->
+        <div class="mb-4">
+            <label class="block font-semibold mb-1">Nama Produk</label>
+            <input type="text" class="w-full border border-gray-300 p-2 rounded-lg" placeholder="Nama Produk">
+        </div>
+
+        <!-- Product Description -->
+        <div class="mb-6">
+            <label class="block font-semibold mb-1">Deskripsi Produk</label>
+            <textarea class="w-full border border-gray-300 p-2 rounded-lg" rows="3" placeholder="Deskripsi Produk"></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex justify-between">
+            <button class="bg-gray-200 px-4 py-2 rounded-lg">Kembali</button>
+            <div>
+                <button class="bg-gray-200 px-4 py-2 rounded-lg mr-2">Simpan & Arsipkan</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Simpan & Tampilkan</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to preview the image when a file is uploaded
+        function previewImage(event, previewId) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgElement = document.getElementById(previewId);
+                    imgElement.src = e.target.result;
+                    imgElement.style.display = 'block'; // Show the image
+                    imgElement.previousElementSibling.style.display = 'none'; // Hide the placeholder text
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+</body>
+</html>

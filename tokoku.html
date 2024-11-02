@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>makanan 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body >
+    <div class="navbar bg-[#0A254A] flex justify-between items-center">
+        <div class="flex items-center">
+          <img src="resource/Image/logo-ubb.png" alt="" class="size-16 w-20 ml-8"> <!--Logo Lapak UBB-->
+          <!-- Search Barang -->
+          <div class="">
+            <input type="search" name="" id="" class="bg-white w-full lg:w-[800px] rounded-lg  h-10 ml-16 p-4"
+              placeholder="Search The Product Here">
+          </div>
+          <!-- Search Barang End-->
+        </div>
+    
+        <div class="flex items-center">
+          <img src="resource/Image/keranjang.png" alt="" class="size-12 mx-8"> <!--Logo Keranjang-->
+          <div tabindex="0" role="button" class="mr-8" onclick="toggleDropdown()">
+            <div class="w-10 rounded-full">
+              <img alt="Tailwind CSS Navbar component" src="resource/Image/LOGO GUESS.png" class="" />
+            </div>
+          </div>
+          <div id="dropdownMenu" class="absolute right-0 mt-56 w-48 bg-white rounded-lg shadow-lg hidden z-50" >
+            <ul class="py-2">
+              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li>
+              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li>
+              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Logout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    <script src="resource/JS/drop_profile.js"></script>
+    
+     
+
+
+
+
+
+ <!-- Main Content -->
+ <div class="flex">
+  <!-- Sidebar -->
+  <div class="sidebar bg-gray-100 p-8 ">
+      <h2 class="font-semibold text-lg mb-4">Profil Saya</h2>
+      <button class="block w-full text-left px-4 py-2 bg-gray-300 rounded-lg mb-2 font-semibold hover:bg-[#35ADC6]">Produk</button>
+      <button class="block w-full text-left px-4 py-2 bg-gray-300 rounded-lg mb-6 font-semibold hover:bg-[#35ADC6]">Payment</button>
+      <h3 class="font-semibold text-lg mb-2">Kategori</h3>
+      <ul>
+          <li class="py-2 font-semibold"><input type="radio" name="category" checked> Semua</li>
+          <li class="py-2 font-semibold"><input type="radio" name="category"> Makanan</li>
+          <li class="py-2 font-semibold"><input type="radio" name="category"> Minuman</li>
+          <li class="py-2 font-semibold"><input type="radio" name="category"> Elektronik</li>
+          <li class="py-2 font-semibold"><input type="radio" name="category"> Akademik</li>
+          <li class="py-2 font-semibold"><input type="radio" name="category"> Fashion</li>
+      </ul>
+  </div>
+
+  <!-- Product Gallery -->
+  <div class="product-gallery p-8 ">
+      <div class="flex justify-between items-center mb-4">
+          <h2 class="text-2xl font-semibold">Semua Barang</h2>
+          <button class="bg-[#35ADC6] text-white px-4 py-2 rounded-lg">Add</button>
+      </div>
+      <div class="grid grid-cols-5 gap-4">
+          <!-- Product Cards -->
+          <div class="bg-white p-4 rounded-lg shadow-2xl">
+              <img src="resource/Image/produk 1.png" alt="Funwich" class="rounded-md mb-4">
+              <h3 class="text-lg font-semibold">Funwich</h3>
+              <p class="text-gray-600">Rp 8.000</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-2xl">
+              <img src="resource/Image/minuman 1.png" alt="Dragonfruit Smoothies" class="rounded-md mb-4">
+              <h3 class="text-lg font-semibold">Dragonfruit Smoothies</h3>
+              <p class="text-gray-600">Rp 10.000</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-2xl">
+              <img src="resource/Image/akademik 1.png" alt="Pisang Cokelat Lumer" class="rounded-md mb-4">
+              <h3 class="text-lg font-semibold">Pisang Cokelat Lumer</h3>
+              <p class="text-gray-600">Rp 5.000</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>
