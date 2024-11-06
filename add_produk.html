@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>makanan 1</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="resource/CSS/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body >
@@ -40,44 +41,39 @@
     
         
     <div class="flex items-center justify-center min-h-[80vh]">
-        <div class="bg-white p-10 rounded-lg shadow-2xl w-full max-w-4xl flex items-center space-x-6">
+      <div class="bg-white p-10 rounded-lg shadow-2xl w-full max-w-2xl flex items-center space-x-6">
           <!-- Gambar Produk -->
-           <div class="bg-red-500 h-80 w-60 justify-center items-center" onclick="document.getElementById('file1').click()">
-            <span>TAMBHAKAN FOTO</span>
-            <img src="" alt="preview" class="h-[100%] w-[100%]" id="preview1">
-            <input type="file" name="" id="file1" class="hidden" onchange="previewImage(event, 'preview1')" accept="image/*">
-           </div>
-          
-          
-          <!-- Konten Teks -->
-          <div>
-            <h2 class="text-4xl font-semibold mb-20">Dragonfruit Smoothies</h2>
-            <p class=" text-4xl font-semibold">Rp 10.000 / gelas</p>
-            <p class=" text-2xl font-semibold mt-5">Deskripsi : Tambahan topping buah Rp 12.000</p>
-            <p class=" text-2xl font-semibold mt-5">Owner : Simfoni Smoothies</p>
-            <button class="bg-red-600 px-5 rounded-lg mt-14 mx-4 ml-40 text-2xl text-white" onclick="history.back()">Back</button>
-            <button class="bg-[#35ADC6] px-5 rounded-lg mt-14 mx-auto text-2xl text-white">BUY</button>
+          <div class="bg-[#D9D9D9] h-[250px] w-[230px] flex items-center justify-center absolute " onclick="document.getElementById('file1').click()">
+              <span class="absolute text-white font-semibold" id="placeholderText">TAMBAHKAN FOTO</span>
+              <img src="" alt="preview" class="h-full w-full hidden" id="preview1">
+              <input type="file" id="file1" class="hidden" onchange="previewImage(event, 'preview1')" accept="image/*">
           </div>
-        </div>
+  
+          <!-- Konten Teks -->
+          <div class="px-4 w-full">
+              <form id="productForm">
+                  <label class="block font-semibold my-2 ml-60">Nama Produk</label>
+                  <input type="text" id="productName" class="bg-[#35ADC6] text-white rounded-lg h-8 w-[300px] px-3 ml-60">
+                  <span class="text-red-500 text-sm hidden ml-60" id="errorName">Nama produk wajib diisi</span>
+
+                  <label class="block font-semibold my-2 ml-60">Harga</label>
+                  <input type="number" id="productPrice" class="bg-[#35ADC6] text-white rounded-lg h-8 w-[300px] px-3 ml-60">
+                  <span class="text-red-500 text-sm hidden ml-60" id="errorPrice">Harga wajib diisi</span>
+
+                  <label class="block font-semibold my-2 ml-60">Deskripsi</label>
+                  <input type="text" id="productDescription" class="bg-[#35ADC6] text-white rounded-lg h-8 w-[300px] px-3 ml-60">
+                  <span class="text-red-500 text-sm hidden ml-60" id="errorDescription">Deskripsi wajib diisi</span>
+
+                  <label class="block font-semibold my-2 ml-60">Owner</label>
+                  <input type="text" id="productOwner" class="bg-[#35ADC6] text-white rounded-lg h-8 w-[300px] px-3 ml-60">
+                  <span class="text-red-500 text-sm hidden ml-60" id="errorOwner">Owner wajib diisi</span>
+
+                  <button type="button" class="bg-[#35ADC6] px-5 h-12 rounded-lg mt-8 text-2xl text-white ml-[420px]" onclick="validateForm()">Simpan</button>
+              </form>
+          </div>
       </div>
-
-
-      <script>
-        // Function to preview the image when a file is uploaded
-        function previewImage(event, previewId) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const imgElement = document.getElementById(previewId);
-                    imgElement.src = e.target.result;
-                    imgElement.style.display = 'block'; // Show the image
-                    imgElement.previousElementSibling.style.display = 'none'; // Hide the placeholder text
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-    </script>
-
+  </div>
+  
+  <script src="resource/JS/add_produk.js"></script>
     </body>
     </html>
