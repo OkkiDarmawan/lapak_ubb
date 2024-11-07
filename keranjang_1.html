@@ -43,7 +43,7 @@
     
     <!-- Box Keranjang -->
     <div class="flex justify-center mt-8">
-      <div class="w-[800px] bg-white shadow-md rounded-lg p-6">
+      <div class="w-[800px]  bg-white shadow-md rounded-lg p-6">
           <table class="w-full text-center">
               <thead>
                   <tr class="bg-[#35ADC6]">
@@ -55,7 +55,7 @@
               </thead>
               <tbody id="cart-content">
                   <tr>
-                      <td><img src="resource/Image/produk 1.png" alt="Funwich" class="w-12 h-12 inline-block"> Funwich</td>
+                      <td><img src="resource/Image/produk 1.png" alt="Funwich" class="w-24 h-24 inline-block"> Funwich</td>
                       <td>
                           <button class="px-2 py-1" id="btnKurang">-</button>
                           <input type="number" value="1" class="w-12 text-center" id="qtyInput" readonly>
@@ -68,10 +68,14 @@
           </table>
           <div class="flex justify-between mt-4">
               <button class="bg-red-500 text-white px-4 py-2 rounded" id="btnBack" onclick="history.back()">Back</button>
-              <button class="bg-blue-600 text-white px-4 py-2 rounded" id="btnBayar">Bayar</button>
+              <button type="button" class="bg-blue-600 text-white px-4 py-2 rounded" id="btnBayar" onclick="window.location.href='metode_pembayaran_1.html'">Bayar</button>
           </div>
       </div>
   </div>
+
+
+
+
 
 <script src="resource/JS/payment_produk.js"></script>
     </body>
