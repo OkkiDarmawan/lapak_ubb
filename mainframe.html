@@ -1,99 +1,96 @@
 <!DOCTYPE html>
-<html lang ="en" data-theme="light">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset ="UTF-8">
-    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile-Saya</title>
-    <link rel ="stylesheet" href ="resource/CSS/style_profile.css">
+    <link rel="stylesheet" href="resource/CSS/style_profile.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
 <body>
-    <!-- <div class ="banner_atas"> 
-        <img src ="resource/Image/logo_lapak.png" class ="logo_lapak">
-
-        <div class ="search-bar"> 
-            <div class ="search-text">Search The Product Here</div>
+    <div class="navbar bg-[#0A254A] flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="resource/Image/logo-ubb.png" alt="" class="size-16 w-20 ml-8">
+            <div class="">
+                <input type="search" name="" id="" class="bg-white w-full lg:w-[800px] rounded-lg h-10 ml-16 p-4" placeholder="Search The Product Here">
+            </div>
         </div>
 
-        <img src ="resource/Image/cart.png" class ="keranjang">
-        <img src ="resource/Image/guess_logo.png" class ="profile"> -->
-        <div class="navbar bg-[#0A254A] flex justify-between items-center">
-            <div class="flex items-center">
-              <img src="resource/Image/logo-ubb.png" alt="" class="size-16 w-20 ml-8"> <!--Logo Lapak UBB-->
-              <!-- Search Barang -->
-              <div class="">
-                <input type="search" name="" id="" class="bg-white w-full lg:w-[800px] rounded-lg  h-10 ml-16 p-4"
-                  placeholder="Search The Product Here">
-              </div>
-              <!-- Search Barang End-->
-            </div>
-        
-            <div class="flex items-center">
-              <img src="resource/Image/keranjang.png" alt="" class="size-12 mx-8 cursor-pointer" onclick="window.location.href='keranjang_1.html'"> <!--Logo Keranjang-->
-              <div tabindex="0" role="button" class="mr-8" onclick="toggleDropdown()">
+        <div class="flex items-center">
+            <img src="resource/Image/keranjang.png" alt="" class="size-12 mx-8 cursor-pointer" onclick="window.location.href='keranjang_1.html'">
+            <div tabindex="0" role="button" class="mr-8" onclick="toggleDropdown()">
                 <div class="w-10 rounded-full">
-                  <img alt="Tailwind CSS Navbar component" src="resource/Image/LOGO GUESS.png" class="" />
+                    <img alt="Profile icon" src="resource/Image/LOGO GUESS.png" />
                 </div>
-              </div>
-              <div id="dropdownMenu" class="absolute right-0 mt-56 w-48 bg-white rounded-lg shadow-lg hidden z-50" >
+            </div>
+            <div id="dropdownMenu" class="absolute right-0 mt-56 w-48 bg-white rounded-lg shadow-lg hidden z-50">
                 <ul class="py-2">
-                  <a href="index.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a> 
-                  <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li>
-                  <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li>
-                  <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Logout</li>
+                    <a href="index.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a>
+                    <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li>
+                    <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li>
+                    <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Logout</li>
                 </ul>
-              </div>
             </div>
-          </div>
-        
-        <script src="resource/JS/drop_profile.js"></script>
-        
-
-
-
-        <div class ="box_akun_saya "> 
-            <div class ="text_akun_saya">Akun Saya</div>
-            <img src ="resource/Image/icon_akun_saya.png" class ="icon_akun_saya"> </div>
-        </div>
-
-       
-        <div class ="box_konten">
-            <div class ="konten_text1">PROFIL SAYA</div>
-            <div class ="konten_text2">Kelola informasi profil Anda untuk mengontrol, melindungi, dan mengamankan akun</div>
-            <div class ="konten_garis"></div>
-
-            <div class ="kategori_text_kiri">
-                <div class ="nama">Nama</div>
-                <div class ="nim">NIM</div>
-                <div class ="email">Email</div>
-                <div class ="no_telepon">No. Telepon</div>
-                <div class ="alamat">Alamat</div>
-                <div class ="jenis_kelamin">Jenis Kelamin</div>
-                <div class ="tanggal_lahir">Tanggal Lahir</div>
-            </div>
-            
-            <div class ="kategori_text_kanan">
-                <div class ="isi_nama">Terima kasih</div>
-                <div class ="isi_nim">9901299032</div>
-                <div class ="isi_email">terimakasih99@gmail.com</div>
-                <div class ="isi_no_telepon">088097131973</div>
-                <div class ="isi_alamat">Jl. Sama-sama, wakanda</div>
-                <div class ="isi_jenis_kelamin">(In Dev)</div>
-                <div class ="isi_tanggal_lahir">31 - 12 - 3000</div>
-            </div>
-
-            <img src ="resource/Image/asu.png" class ="icon_profile"> </div>
-
-            <button class ="tombol_edit_gambar">
-                <div class ="text_tombol_edit">Ubah Gambar</div>
-            </button>
-
         </div>
     </div>
-    
-    <div class ="banner_atas2"> </div>
-    
+
+    <script src="resource/JS/drop_profile.js"></script>
+
+    <div class="box_akun_saya">
+        <div class="text_akun_saya">Akun Saya</div>
+        <img src="resource/Image/icon_akun_saya.png" class="icon_akun_saya">
+    </div>
+
+    <div class="box_konten">
+        <div class="konten_text1">PROFIL SAYA</div>
+        <div class="konten_text2">Kelola informasi profil Anda untuk mengontrol, melindungi, dan mengamankan akun</div>
+        <div class="konten_garis"></div>
+
+        <div class="kategori_text_kiri">
+            <div class="nama">Nama</div>
+            <div class="nim">NIM</div>
+            <div class="email">Email</div>
+            <div class="no_telepon">No. Telepon</div>
+            <div class="alamat">Alamat</div>
+            <div class="jenis_kelamin">Jenis Kelamin</div>
+            <div class="tanggal_lahir">Tanggal Lahir</div>
+        </div>
+
+        <div class="kategori_text_kanan">
+            <div class="isi_nama">Aditya</div>
+            <div class="isi_nim">11023111440</div>
+            <div class="isi_email">adittya1102@gmail.com</div>
+            <div class="isi_no_telepon">088097131973</div>
+            <div class="isi_alamat">Jl. Sama-sama, wakanda</div>
+            <div class="isi_jenis_kelamin">Laki-laki</div>
+            <div class="isi_tanggal_lahir">13 - 09 - 2001</div>
+        </div>
+
+        <img src="resource/Image/asu.png" class="icon_profile" id="gambarEdit">
+        
+        <!-- Tombol untuk mengubah gambar -->
+        <button class="tombol_edit_gambar" onclick="document.getElementById('fileInput').click()">
+            <div class="text_tombol_edit">Ubah Gambar</div>
+        </button>
+
+        <!-- Input file yang tersembunyi -->
+        <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="previewImage(event)">
+    </div>
+
+    <script>
+        // Fungsi untuk memuat gambar baru ke dalam elemen dengan id "gambarEdit"
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById("gambarEdit").src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
 </body>
 </html>
