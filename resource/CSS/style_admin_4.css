@@ -1,0 +1,275 @@
+.banner_atas{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+    z-index: 100; 
+    background: #0A254A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo_lapak{
+    position: absolute;
+    width: 260px;
+    height: 110px;
+    left: 25px;
+    top: 25px;
+}
+
+.kotak_kiri{
+    position: absolute;
+    width: 226px;
+    height: 794px;
+    left: 46px;
+    top: 200px;
+
+    background: #FFFFFF;
+    border: 5px solid #35ADC6;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 54px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.kotak_kanan{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1000px;
+    height: 800px;
+    left: 283px;
+    top: 200px;
+
+    background: #FFFFFF;
+    border: 14px solid #35ADC6;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 54px;
+}
+
+.judul_dashboard{
+    position: absolute;
+    width: 990px;
+    height: 70px;
+    left: 285px;
+    top: 210px;
+    z-index: 90; 
+    border-radius: 54px;
+
+    background: #35ADC6;
+}
+
+.penampal_dashboard{
+    position: absolute;
+    width: 995px;
+    height: 30px;
+    left: 285px;
+    top: 250px;
+    z-index: 90; 
+
+    background: #35ADC6;
+}
+
+.tulisan_dashboard{
+    position: absolute;
+    width: 1160px;
+    height: 76px;
+    left: 630px;
+    top: 203px;
+
+    font-family: 'calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 39px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+    z-index: 91; 
+}
+
+.kotak_isian{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 200px;
+    height: 70px;
+    left: 12px;
+    top: 75px;
+
+    border: 3px solid #000000;
+}
+
+.kotak_isian2{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 200px;
+    height: 70px;
+    left: 12px;
+    top: 145px;
+
+    border: 3px solid #000000;
+}
+
+.text_isian{
+    position: absolute;
+    width: 200px;
+    height: 76px;
+    left: 10px;
+    top: -6px;
+
+    font-family: 'calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.text_isian2{
+    position: absolute;
+    width: 200px;
+    height: 76px;
+    left: 25px;
+    top: -6px;
+
+    font-family: 'calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.isi_konten{
+    position: absolute;
+    width: 540px;
+    height: 190px;
+    left: 310px;
+    top: 300px;
+}
+
+.kotaknya_konten{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 945px;
+    height: 673px;
+    left: 0px;
+    top: 0px;
+
+    border: 2px solid #000000;
+    border-radius: 20px;
+}
+
+.judulnya_konten{
+    position: absolute;
+    width: 500px;
+    height: 76px;
+    left: 330px;
+    top: -3px;
+
+    font-family: 'calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.penjual{
+    position: absolute;
+    width: 200px;
+    height: 500px;
+    left: 0px;
+    top: 60px;
+
+    font-family: 'calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.email{
+    position: absolute;
+    width: 200px;
+    height: 500px;
+    left: 190px;
+    top: 60px;
+
+    font-family: 'calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.telepon{
+    position: absolute;
+    width: 200px;
+    height: 500px;
+    left: 420px;
+    top: 60px;
+
+    font-family: 'calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.link{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 520px;
+    top: 60px;
+
+    font-family: 'calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.kotak_pemanis{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 905px;
+    height: 30px;
+    left: 20px;
+    top: 75px;
+
+    border: 2px solid #000000;
+}
