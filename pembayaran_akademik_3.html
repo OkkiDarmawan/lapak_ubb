@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metode Pembayaran</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="resource/CSS/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar bg-[#0A254A] flex justify-between items-center">
+        <div class="flex items-center">
+          <img src="resource/Image/logo-ubb.png" alt="" class="size-16 w-20 ml-8"> <!--Logo Lapak UBB-->
+          <!-- Search Barang -->
+          <div class="">
+            <input type="search" name="" id="" class="bg-white w-full lg:w-[800px] rounded-lg  h-10 ml-16 p-4"
+              placeholder="Search The Product Here">
+          </div>
+          <!-- Search Barang End-->
+        </div>
+    
+        <div class="flex items-center">
+          <img src="resource/Image/keranjang.png" alt="" class="size-12 mx-8"> <!--Logo Keranjang-->
+          <div tabindex="0" role="button" class="mr-8" onclick="toggleDropdown()">
+            <div class="w-10 rounded-full">
+              <img alt="Tailwind CSS Navbar component" src="resource/Image/LOGO GUESS.png" class="" />
+            </div>
+          </div>
+          <div id="dropdownMenu" class="absolute right-0 mt-56 w-48 bg-white rounded-lg shadow-lg hidden z-50" >
+            <ul class="py-2">
+                <a href="home.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a>
+                <a href="mainframe.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
+               <a href="tokoku.html">  <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a>
+              <a href="index.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
+            </ul>
+          </div>
+        </div>
+      </div> 
+    
+    <script src="resource/JS/drop_profile.js"></script>
+
+
+ <!-- Box Keranjang -->
+ <div class="flex justify-center mt-8">
+    <div class="w-[800px]  bg-white shadow-md rounded-lg p-6">
+        <table class="w-full text-center">
+            <thead>
+                <tr class="bg-[#35ADC6]">
+                    <th>Nama Item</th>
+                    <th>Harga Satuan</th>
+                    <th>Jumlah</th>
+                    <th>Subtotal Produk </th>
+                </tr>
+            </thead>
+            <tbody id="cart-content">
+                <tr>
+                    <td><img src="resource/Image/akademik 3.png" alt="Funwich" class="w-24 h-24 inline-block">Kalkulator Ilmiah Scientic</td>
+                    <td>Rp40.000</td>
+                    <td id="harga">1</td>
+                    <td>Rp40.000</td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+</div>
+
+    <!-- Konten untuk Metode Pembayaran -->
+    <div class="flex justify-center mt-8">
+        <div class="w-[800px] bg-white shadow-xl rounded-lg p-6 text-center">
+            <h3 class="text-xl font-bold mb-4">Metode Pembayaran</h3>
+            <div class="flex justify-center gap-4 my-4">
+                <button id="btnCOD" class="border border-[#0A254A] px-4 py-2 rounded">COD</button>
+                <button id="btnBRI" class="border border-[#0A254A] px-4 py-2 rounded">BRI</button>
+                <button id="btnDana" class="border border-[#0A254A] px-4 py-2 rounded">Dana</button>
+                <button id="btnGopay" class="border border-[#0A254A] px-4 py-2 rounded">Gopay</button>
+                <button id="btnShoppepay" class="border border-[#0A254A] px-4 py-2 rounded">Shoppepay</button>
+            </div>
+            <button id="btnPesan" class="bg-[#35ADC6] text-white px-4 py-2 rounded disabled" disabled onclick="window.location.href='payment_bri_1.html'">Buat Pesanan</button>
+        </div>
+    </div>
+
+    <div class="flex justify-center mt-8">
+        <div class="w-[400px] font-semibold shadow-xl p-4 rounded-md"> 
+
+            <h2>Pesan : <input type="text" class="px-2 border-none w-[300px]"></h2>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript untuk mengelola pemilihan metode pembayaran
+        document.addEventListener("DOMContentLoaded", function () {
+            const btnPesan = document.getElementById("btnPesan");
+            const btnCOD = document.getElementById("btnCOD");
+            const btnBRI = document.getElementById("btnBRI");
+            const btnDana = document.getElementById("btnDana");
+            const btnGopay = document.getElementById("btnGopay");
+            const btnShoppepay = document.getElementById("btnShoppepay");
+
+            let metodeDipilih = null; // Menyimpan metode pembayaran yang dipilih
+
+            // Event listener untuk tombol COD
+            btnCOD.addEventListener("click", function () {
+                metodeDipilih = "COD";
+                btnCOD.classList.add("bg-blue-300"); // Menambahkan warna untuk menunjukkan dipilih
+                btnBRI.classList.remove("bg-blue-300"); // Menghapus warna dari tombol lainnya
+                btnDana.classList.remove("bg-blue-300");
+                btnGopay.classList.remove("bg-blue-300");
+                btnShoppepay.classList.remove("bg-blue-300");
+                enablePesanButton();
+            });
+
+            // Event listener untuk tombol BRI
+            btnBRI.addEventListener("click", function () {
+                metodeDipilih = "BRI";
+                btnBRI.classList.add("bg-blue-300");
+                btnCOD.classList.remove("bg-blue-300");
+                btnGopay.classList.remove("bg-blue-300");
+                btnDana.classList.remove("bg-blue-300");
+                btnShoppepay.classList.remove("bg-blue-300");
+                enablePesanButton();
+            });
+            // Event listener untuk tombol Dana
+            btnDana.addEventListener("click", function () {
+                metodeDipilih = "Dana";
+                btnDana.classList.add("bg-blue-300");
+                btnBRI.classList.remove("bg-blue-300");
+                btnCOD.classList.remove("bg-blue-300");
+                btnGopay.classList.remove("bg-blue-300");
+                btnShoppepay.classList.remove("bg-blue-300");
+                enablePesanButton();
+            });
+            // Event listener untuk tombol Gopay
+            btnGopay.addEventListener("click", function () {
+                metodeDipilih = "Gopay";
+                btnGopay.classList.add("bg-blue-300");
+                btnCOD.classList.remove("bg-blue-300");
+                btnBRI.classList.remove("bg-blue-300");
+                btnDana.classList.remove("bg-blue-300");
+                btnShoppepay.classList.remove("bg-blue-300");
+                enablePesanButton();
+            });
+            // Event listener untuk tombol Shoppepay
+            btnShoppepay.addEventListener("click", function () {
+                metodeDipilih = "Shoppepay";
+                btnShoppepay.classList.add("bg-blue-300");
+                btnCOD.classList.remove("bg-blue-300");
+                btnBRI.classList.remove("bg-blue-300");
+                btnDana.classList.remove("bg-blue-300");
+                btnGopay.classList.remove("bg-blue-300");
+                enablePesanButton();
+            });
+
+            // Fungsi untuk mengaktifkan tombol "Buat Pesanan"
+            function enablePesanButton() {
+                if (metodeDipilih) {
+                    btnPesan.classList.remove("disabled");
+                    btnPesan.removeAttribute("disabled");
+                }
+            }
+
+            // Event listener untuk tombol Buat Pesanan
+            btnPesan.addEventListener("click", function () {
+                if (metodeDipilih) {
+                    alert(`Pesanan berhasil dibuat dengan metode pembayaran: ${metodeDipilih}`);
+                    // Di sini Anda dapat menambahkan fungsi lebih lanjut untuk menyimpan pesanan atau mengarahkan ke halaman lain
+                }
+            });
+        });
+    </script>
+</body>
+</html>
