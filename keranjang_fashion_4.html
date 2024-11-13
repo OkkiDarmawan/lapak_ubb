@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="resource/CSS/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body >
+    <div class="navbar bg-[#0A254A] flex justify-between items-center">
+        <div class="flex items-center">
+          <img src="resource/Image/logo-ubb.png" alt="" class="size-16 w-20 ml-8"> <!--Logo Lapak UBB-->
+          <!-- Search Barang -->
+          <div class="">
+            <input type="search" name="" id="" class="bg-white w-full lg:w-[800px] rounded-lg  h-10 ml-16 p-4"
+              placeholder="Search The Product Here">
+          </div>
+          <!-- Search Barang End-->
+        </div>
+    
+        <div class="flex items-center">
+          <img src="resource/Image/keranjang.png" alt="" class="size-12 mx-8"> <!--Logo Keranjang-->
+          <div tabindex="0" role="button" class="mr-8" onclick="toggleDropdown()">
+            <div class="w-10 rounded-full">
+              <img alt="Tailwind CSS Navbar component" src="resource/Image/LOGO GUESS.png" class="" />
+            </div>
+          </div>
+          <div id="dropdownMenu" class="absolute right-0 mt-56 w-48 bg-white rounded-lg shadow-lg hidden z-50" >
+            <ul class="py-2">
+              <a href="home.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a>
+                    <a href="mainframe.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
+                   <a href="tokoku.html">  <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a>
+                  <a href="index.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
+            </ul>
+          </div>
+        </div>
+      </div> 
+    
+    <script src="resource/JS/drop_profile.js"></script>
+
+    
+    <!-- Box Keranjang -->
+    <div class="flex justify-center mt-8">
+      <div class="w-[800px]  bg-white shadow-md rounded-lg p-6">
+          <table class="w-full text-center">
+              <thead>
+                  <tr class="bg-[#35ADC6]">
+                      <th>Nama Item</th>
+                      <th>Kuantitas</th>
+                      <th>Harga</th>
+                      <th>Aksi</th>
+                  </tr>
+              </thead>
+              <tbody id="cart-content">
+                  <tr>
+                      <td><img src="resource/Image/fashion 4.png" alt="Funwich" class="w-24 h-24 inline-block">Sepatu Futsal</td>
+                      <td>
+                          <button class="px-2 py-1" id="btnKurang">-</button>
+                          <input type="number" value="1" class="w-12 text-center" id="qtyInput" readonly>
+                          <button class="px-2 py-1" id="btnTambah">+</button>
+                      </td>
+                      <td id="harga">Rp300.000</td>
+                      <td><button id="btnHapus" class="text-red-500">HAPUS</button></td>
+                  </tr>
+              </tbody>
+          </table>
+          <div class="flex justify-between mt-4">
+              <button class="bg-red-500 text-white px-4 py-2 rounded" id="btnBack" onclick="history.back()">Back</button>
+              <button type="button" class="bg-blue-600 text-white px-4 py-2 rounded" id="btnBayar" onclick="window.location.href='metode_pembayaran_1.html'">Bayar</button>
+          </div>
+      </div>
+  </div>
+
+
+
+
+
+<script src="resource/JS/payment_fashion_4.js"></script>
+    </body>
+    </html>
