@@ -480,3 +480,22 @@
     text-align: center;
     color: #000000;
 }
+
+.btn_simpan {
+    display: block;
+    margin: 20px auto; /* Posisikan di tengah bawah konten */
+    margin-top: 750px;
+    margin-right: 150px;
+    background-color: #0A254A; /* Warna tombol */
+    color: white; /* Warna teks */
+    padding: 20px 30px; /* Ukuran tombol */
+    border: none;
+    border-radius: 5px; /* Membuat tombol melengkung */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn_simpan:hover {
+    background-color: #35ADC6; /* Warna saat hover */
+}

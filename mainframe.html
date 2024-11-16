@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="resource/CSS/style_profile.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="resource/JS/searchLogic.js"></script>
 </head>
 <body>
     <div class="navbar bg-[#0A254A] flex justify-between items-center">
         <div class="flex items-center">
+            
             <img src="resource/Image/logo-ubb.png" alt="" class="size-16 w-20 ml-8">
             <div class="">
-                <input type="search" name="" id="" class="bg-white w-full lg:w-[800px] rounded-lg h-10 ml-16 p-4" placeholder="Search The Product Here">
+                <input type="search" name="" id="inputSearch" class="bg-white w-full lg:w-[800px] rounded-lg h-10 ml-16 p-4" placeholder="Search The Product Here">
             </div>
         </div>
 
@@ -77,6 +79,8 @@
 
         <!-- Input file yang tersembunyi -->
         <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="previewImage(event)">
+        
+    <button id="btnSimpan" type="button" class="btn_simpan" onclick="simpanProfile()">Simpan</button>
     </div>
 
     <script>
@@ -91,6 +95,12 @@
                 reader.readAsDataURL(file);
             }
         }
+
+const btnSimpan = document.getElementById("btnSimpan")
+function simpanProfile(){
+    alert("halo")
+}
+
     </script>
 
 </body>
