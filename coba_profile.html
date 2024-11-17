@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Saya</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="resource/JS/searchLogic.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </head>
 <body class="bg-gray-100">
   <div class="navbar bg-[#0A254A] flex justify-between items-center px-4 md:px-8 h-20">
@@ -68,6 +71,28 @@
     class="bg-[#35ADC6] mt-4 text-center text-zinc-100 content-center rounded-lg h-10">Fashion</a>
 </div>
 <!-- Kategori Barang End -->
+
+
+  <!-- Iklan Produk -->
+
+  <div class="swiper mt-12 bg-red-700 h-60 w-full lg:w-[1250px] rounded-lg">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="resource/Image/iklan ubb 1.jpg" alt="" class="w-full h-full"></div>
+      <div class="swiper-slide"><img src="resource/Image/iklan makanan 1.jpg" alt="" class="w-full h-full"></div>
+      <div class="swiper-slide"><img src="resource/Image/iklan ubb 2.jpg" alt="" class="w-full h-full"></div>
+      ...
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-scrollbar"></div>
+  </div>
+  <script src="resource/JS/iklan_slider.js"></script> <!--Iklan_slider-->
+  <!-- Iklan Produk End -->
+
+
+
+
 
 
 
