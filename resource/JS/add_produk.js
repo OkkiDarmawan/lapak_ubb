@@ -19,13 +19,13 @@ function validateForm() {
     const nameField = document.getElementById('productName');
     const priceField = document.getElementById('productPrice');
     const descriptionField = document.getElementById('productDescription');
-    const ownerField = document.getElementById('productOwner');
+    // const ownerField = document.getElementById('productOwner');
 
     // Select error messages
     const errorName = document.getElementById('errorName');
     const errorPrice = document.getElementById('errorPrice');
     const errorDescription = document.getElementById('errorDescription');
-    const errorOwner = document.getElementById('errorOwner');
+    // const errorOwner = document.getElementById('errorOwner');
 
     // Track if form is valid
     let isValid = true;
@@ -52,15 +52,15 @@ function validateForm() {
         errorDescription.classList.add('hidden');
     }
 
-    if (ownerField.value.trim() === "") {
-        errorOwner.classList.remove('hidden');
-        isValid = false;
-    } else {
-        errorOwner.classList.add('hidden');
-    }
+    // if (ownerField.value.trim() === "") {
+    //     errorOwner.classList.remove('hidden');
+    //     isValid = false;
+    // } else {
+    //     errorOwner.classList.add('hidden');
+    // }
 
     // If form is valid, submit the form (redirect as example)
     if (isValid) {
-        window.location.href = 'tokoku.html';
+        window.location.href = 'tokoku_2.html';
     }
 }
