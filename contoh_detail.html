@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Saya</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="resource/JS/searchLogic.js"></script>
+   
+</head>
+<body class="bg-gray-100">
+  <div class="navbar bg-[#0A254A] flex justify-between items-center px-4 md:px-8 h-20">
+    <!-- Kiri: Logo dan Search -->
+    <div class="flex items-center space-x-4">
+      <!-- Logo -->
+      <img src="resource/Image/logo-ubb.png" alt="Logo" class="w-16 md:w-20">
+  
+      <!-- Search Barang -->
+      <div class="flex-1">
+        <input
+          type="search"
+          id="inputSearch"
+          class="bg-white w-full sm:w-[500px] md:w-[600px] lg:w-[800px] rounded-lg h-10 px-4"
+          placeholder="Search The Product Here"
+        />
+      </div>
+    </div>
+  
+    <!-- Kanan: Icon Keranjang dan Dropdown -->
+    <div class="flex items-center space-x-4">
+      <!-- Keranjang -->
+      <img src="resource/Image/keranjang.png" alt="Keranjang" class="w-8 md:w-10 cursor-pointer">
+  
+      <!-- Profile Dropdown -->
+      <div tabindex="0" role="button" class="relative" onclick="toggleDropdown()">
+        <div class="w-8 md:w-10 rounded-full">
+          <img src="resource/Image/LOGO GUESS.png" alt="Profile Icon" />
+        </div>
+  
+        <!-- Dropdown Menu -->
+        <div
+          id="dropdownMenu"
+          class="absolute right-0 mt-12 w-48 bg-white rounded-lg shadow-lg hidden z-50"
+        >
+          <ul class="py-2">
+            <a href="home.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a>
+            <a href="mainframe.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
+            <a href="tokoku.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a>
+            <a href="index.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+ <!-- Konten Produk -->
+ <div class="flex flex-col lg:flex-row items-center lg:justify-center min-h-[80vh] p-4 lg:space-x-6">
+    <!-- Gambar Produk -->
+    <img src="resource/Image/box akademik 1.png" alt="Produk Image" class="w-full lg:w-1/2 rounded-lg mb-6 lg:mb-0">
+    
+    <!-- Konten Teks -->
+    <div>
+      <h2 class="text-2xl lg:text-4xl font-semibold mb-4 lg:mb-6">Pulpen Gen Warna Warni</h2>
+      <p class="text-lg lg:text-4xl font-semibold">Rp 20.000 / kotak</p>
+      <p class="text-base lg:text-2xl font-semibold mt-2 lg:mt-5">Deskripsi: Pulpen dengan banyak warna yang indah dan cantik</p>
+      <p class="text-base lg:text-2xl font-semibold mt-2 lg:mt-5">Owner: Yudi</p>
+      
+      <!-- Tombol dan Input -->
+      <div class="flex flex-col mt-4">
+        <div class="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-4">
+          <button class="bg-[#35ADC6] px-5 rounded-lg w-full lg:w-1/2 h-10 text-base lg:text-2xl text-white" onclick="window.location.href='pembayaran_akademik_1.html'">Beli</button>
+          <div class="flex items-center space-x-2">
+            <button class="px-3 py-1 h-10 text-base lg:text-2xl font-medium" id="btnKurang">-</button>
+            <input type="number" value="1" class="w-12 h-10 text-center border-2 border-black" id="qtyInput" readonly>
+            <button class="px-3 py-1 h-10 text-base lg:text-2xl font-medium" id="btnTambah">+</button>
+          </div>
+        </div>
+        
+        <button class="bg-[#35ADC6] px-5 rounded-lg mt-4 w-full h-10 text-base lg:text-2xl text-white" id="btnKeranjang" onclick="addKeranjang()">Keranjang</button>
+        <button class="bg-red-600 px-5 rounded-lg mt-4 w-full h-10 text-base lg:text-2xl text-white" onclick="history.back()">Back</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const btnKeranjang = document.getElementById("btnKeranjang")
+    function addKeranjang(){
+      alert ("Berhasil Ditambahkan");
+    }
+    </script>
+
+
+
+
+  <script>
+    // Fungsi untuk toggle dropdown menu
+    function toggleDropdown() {
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        dropdownMenu.classList.toggle("hidden"); // Tambah/Remove kelas 'hidden'
+    }
+
+    // Event listener untuk menutup dropdown jika klik di luar area
+    document.addEventListener("click", function (event) {
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        const profileButton = dropdownMenu.previousElementSibling; // Tombol dropdown
+
+        // Periksa apakah klik di luar tombol dropdown atau dropdown menu
+        if (!profileButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.add("hidden");
+        }
+    });
+</script>
+
+
+</body>
+</html>
