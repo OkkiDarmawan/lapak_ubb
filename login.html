@@ -4,30 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Form</title>
+    <title>Login Form</title>
     <link rel="stylesheet" href="resource/CSS/style_regis.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+         .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+        .input-box input.error {
+            border-color: red;
+        }
+    </style>
 </head>
 
 <body>
     <div class="loginformregister">
         <div class="formregister">
-            <form action="">
+            <form id="loginForm">
                 <h1>Login</h1>
 
+                <!-- Input NIM -->
                 <div class="input-box">
-                    <input type="number" placeholder="NIM">
+                    <input type="number" id="nimInput" placeholder="NIM">
+                    <span class="error-message" id="nimError">NIM tidak boleh kosong!</span>
                 </div>
 
+                <!-- Input Password -->
                 <div class="input-box">
-                    <input type="password" placeholder="Password">
+                    <input type="password" id="passwordInput" placeholder="Password">
+                    <span class="error-message" id="passwordError">Password tidak boleh kosong!</span>
                 </div>
 
-                <button type="button" class="btn" onclick="window.location.href='home.html'">Login</button>
+                <!-- Tombol Login -->
+                <button type="button" class="btn" onclick="validateLogin()">Login</button>
+
+                <!-- Tombol Daftar -->
                 <button type="button" class="btn" onclick="window.location.href='regis.html'">Daftar</button>
             </form>
         </div>
     </div>
+    <script>
+        function validateLogin() {
+            // Ambil elemen input dan pesan error
+            const nimInput = document.getElementById("nimInput");
+            const passwordInput = document.getElementById("passwordInput");
+            const nimError = document.getElementById("nimError");
+            const passwordError = document.getElementById("passwordError");
+
+            // Reset error state
+            let isValid = true;
+            nimError.style.display = "none";
+            passwordError.style.display = "none";
+            nimInput.classList.remove("error");
+            passwordInput.classList.remove("error");
+
+            // Validasi NIM
+            if (!nimInput.value.trim()) {
+                nimError.style.display = "block";
+                nimInput.classList.add("error");
+                isValid = false;
+            }
+
+            // Validasi Password
+            if (!passwordInput.value.trim()) {
+                passwordError.style.display = "block";
+                passwordInput.classList.add("error");
+                isValid = false;
+            }
+
+            // Jika valid, arahkan ke halaman home
+            if (isValid) {
+                window.location.href = 'home.html';
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -6,34 +6,105 @@
     <title>Register Form</title>
     <link rel="stylesheet" href="resource/CSS/style_regis.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .input-box input.error {
+            border-color: red;
+        }
+    </style>
 </head>
 <body>
-   <div class="loginformregister">
-     <div class="formregister">
-        <form action="">
-            <h1>Register</h1>
-            <div class="input-box">
-                <input type="text" placeholder="Nama">
-            </div>  
-            <div class="input-box">
-                <input type="number" placeholder="NIM">
-            </div>  
-            <div class="input-box">
-                <input type="text" placeholder="Email">
-            </div> 
-            <div class="input-box">
-                <input type="password" placeholder="Password">
-            </div>  
-            <div class="input-box">
-                <input type="number" placeholder="Nomor Telepon">
-            </div>  
-            <div class="input-box">
-                <input type="text" placeholder="Alamat">
-            </div>
-            <button type="button" class="btn" onclick="window.location.href='login.html'">KIRIM</button>
-        </form>
-     </div>
-   </div>
+    <div class="loginformregister">
+        <div class="formregister">
+            <form id="registerForm">
+                <h1>Register</h1>
+
+                <!-- Input Nama -->
+                <div class="input-box">
+                    <input type="text" id="nameInput" placeholder="Nama">
+                    <span class="error-message" id="nameError">Nama tidak boleh kosong!</span>
+                </div>
+
+                <!-- Input NIM -->
+                <div class="input-box">
+                    <input type="number" id="nimInput" placeholder="NIM">
+                    <span class="error-message" id="nimError">NIM tidak boleh kosong!</span>
+                </div>
+
+                <!-- Input Email -->
+                <div class="input-box">
+                    <input type="text" id="emailInput" placeholder="Email">
+                    <span class="error-message" id="emailError">Email tidak boleh kosong!</span>
+                </div>
+
+                <!-- Input Password -->
+                <div class="input-box">
+                    <input type="password" id="passwordInput" placeholder="Password">
+                    <span class="error-message" id="passwordError">Password tidak boleh kosong!</span>
+                </div>
+
+                <!-- Input Nomor Telepon -->
+                <div class="input-box">
+                    <input type="number" id="phoneInput" placeholder="Nomor Telepon">
+                    <span class="error-message" id="phoneError">Nomor Telepon tidak boleh kosong!</span>
+                </div>
+
+                <!-- Input Alamat -->
+                <div class="input-box">
+                    <input type="text" id="addressInput" placeholder="Alamat">
+                    <span class="error-message" id="addressError">Alamat tidak boleh kosong!</span>
+                </div>
+
+                <!-- Tombol Kirim -->
+                <button type="button" class="btn" onclick="validateRegister()">KIRIM</button>
+            </form>
+        </div>
+    </div>
+   <script>
+    function validateRegister() {
+        // Ambil elemen input dan pesan error
+        const nameInput = document.getElementById("nameInput");
+        const nimInput = document.getElementById("nimInput");
+        const emailInput = document.getElementById("emailInput");
+        const passwordInput = document.getElementById("passwordInput");
+        const phoneInput = document.getElementById("phoneInput");
+        const addressInput = document.getElementById("addressInput");
+
+        const nameError = document.getElementById("nameError");
+        const nimError = document.getElementById("nimError");
+        const emailError = document.getElementById("emailError");
+        const passwordError = document.getElementById("passwordError");
+        const phoneError = document.getElementById("phoneError");
+        const addressError = document.getElementById("addressError");
+
+        // Reset error state
+        let isValid = true;
+        const inputs = [nameInput, nimInput, emailInput, passwordInput, phoneInput, addressInput];
+        const errors = [nameError, nimError, emailError, passwordError, phoneError, addressError];
+
+        inputs.forEach((input, index) => {
+            errors[index].style.display = "none";
+            input.classList.remove("error");
+            if (!input.value.trim()) {
+                errors[index].style.display = "block";
+                input.classList.add("error");
+                isValid = false;
+            }
+        });
+
+        // Jika valid, arahkan ke halaman login
+        if (isValid) {
+            window.location.href = 'login.html';
+        }
+    }
+</script>
 </body>
 </html>
 

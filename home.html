@@ -1,75 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" class="scroll-smooth">
-
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- <link rel="stylesheet" href="resource/CSS/iklan.css"> -->
-  <link rel="stylesheet" href="resource/CSS/style_makanan.css">
-  <link rel="stylesheet" href="resource/CSS/style_minuman.css">
-  <link rel="stylesheet" href="resource/CSS/style_elektronik.css">
-  <link rel="stylesheet" href="resource/CSS/style_akademik.css">
-  <link rel="stylesheet" href="resource/CSS/style_fashion.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-  <script src="resource/JS/searchLogic.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Saya</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="resource/JS/searchLogic.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </head>
-
-<body class="overflow-x-hidden">
-
-  <div class="navbar bg-[#0A254A] ">
-    <div class="flex-1">
-      <img src="resource/Image/logo-ubb.png" alt="" class="size-16 w-20 ml-8"> <!--Logo Lapak UBB-->
+<body class="bg-gray-100">
+  <div class="navbar bg-[#0A254A] flex justify-between items-center px-4 md:px-8 h-20">
+    <!-- Kiri: Logo dan Search -->
+    <div class="flex items-center space-x-4">
+      <!-- Logo -->
+      <img src="resource/Image/logo-ubb.png" alt="Logo" class="w-16 md:w-20">
+  
       <!-- Search Barang -->
-      <div class="">
-        <input type="search" name="" id="inputSearch" class="bg-white w-full lg:w-[800px] rounded-lg  h-10 ml-16 p-4"
-          placeholder="Search The Product Here">
+      <div class="flex-1">
+        <input
+          type="search"
+          id="inputSearch"
+          class="bg-white w-full sm:w-[500px] md:w-[600px] lg:w-[800px] rounded-lg h-10 px-4"
+          placeholder="Search The Product Here"
+        />
       </div>
-      <!-- Search Barang End-->
     </div>
-
-    <div class="flex-none">
-      <img src="resource/Image/keranjang.png" alt="" class="size-12 mx-8 cursor-pointer" onclick="window.location.href='keranjang_home.html'"> <!--Logo Keranjang-->
-      <div tabindex="0" role="button" class="mr-8" onclick="toggleDropdown()">
-        <div class="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src="resource/Image/LOGO GUESS.png" class="" />
+  
+    <!-- Kanan: Icon Keranjang dan Dropdown -->
+    <div class="flex items-center space-x-4">
+      <!-- Keranjang -->
+      <img src="resource/Image/keranjang.png" alt="Keranjang" class="w-8 md:w-10 cursor-pointer">
+  
+      <!-- Profile Dropdown -->
+      <div tabindex="0" role="button" class="relative" onclick="toggleDropdown()">
+        <div class="w-8 md:w-10 rounded-full">
+          <img src="resource/Image/LOGO GUESS.png" alt="Profile Icon" />
+        </div>
+  
+        <!-- Dropdown Menu -->
+        <div
+          id="dropdownMenu"
+          class="absolute right-0 mt-12 w-48 bg-white rounded-lg shadow-lg hidden z-50"
+        >
+          <ul class="py-2">
+            <a href="home.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a>
+            <a href="mainframe.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
+            <a href="tokoku.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a>
+            <a href="index.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
+          </ul>
         </div>
       </div>
-
-
-      <div id="dropdownMenu" class="absolute right-0 mt-56 w-48 bg-white rounded-lg shadow-lg hidden z-50">
-        <ul class="py-2">
-          <a href="home.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a> 
-          <a href="mainframe.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
-          <a href="tokoku.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a> 
-          <a href="index.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
-         
-        </ul>
-      </div>
     </div>
   </div>
+      
 
-  <script src="resource/JS/drop_profile.js"></script>
+<!-- Kategori Barang -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8 lg:gap-32 mx-4 md:mx-16 lg:mx-24">
+  <a href="#produk_makanan"
+    class="bg-[#35ADC6] mt-4 text-center text-zinc-100 content-center rounded-lg h-10">Makanan</a>
+  <a href="#produk_minuman"
+    class="bg-[#35ADC6] mt-4 text-center text-zinc-100 content-center rounded-lg h-10">Minuman</a>
+  <a href="#produk_elektronik"
+    class="bg-[#35ADC6] mt-4 text-center text-zinc-100 content-center rounded-lg h-10">Elektronik</a>
+  <a href="#produk_akademik"
+    class="bg-[#35ADC6] mt-4 text-center text-zinc-100 content-center rounded-lg h-10">Akademik</a>
+  <a href="#produk_fashion"
+    class="bg-[#35ADC6] mt-4 text-center text-zinc-100 content-center rounded-lg h-10">Fashion</a>
+</div>
+<!-- Kategori Barang End -->
 
-
-  <!-- Kategori Barang -->
-  <div class="grid grid-cols-5 gap-32 mx-24">
-    <a href="#produk_makanan"
-      class="bg-[#35ADC6] mt-4 text-center text-zinc-100 content-center rounded-lg h-10">Makanan</a>
-    <a href="#produk_minuman"
-      class="bg-[#35ADC6] mt-4 text-center text-zinc-100 content-center rounded-lg h-10">Minuman</a>
-    <a href="#produk_elektronik"
-      class="bg-[#35ADC6] mt-4 text-center text-zinc-100 content-center rounded-lg h-10">Elektronik</a>
-    <a href="#produk_akademik"
-      class="bg-[#35ADC6] mt-4 text-center text-zinc-100 content-center rounded-lg h-10">Akademik</a>
-    <a href="#produk_fashion"
-      class="bg-[#35ADC6] mt-4 text-center text-zinc-100 content-center rounded-lg h-10">Fashion</a>
-  </div>
-  <!-- Kategori Barang End -->
 
   <!-- Iklan Produk -->
 
@@ -89,489 +91,411 @@
   <!-- Iklan Produk End -->
 
 
-  <!-- Produk Makanan-->
-  <div class="flex mx-36 mt-16" id="produk_makanan">
-    <h1 class="mr-10 text-4xl font-bold">Makanan</h1>
-    <h3 class="text-xl pt-3 font-bold">Camilan dan makanan yang cocok didompet mahasiswa</h3>
+
+
+
+
+
+
+
+<!-- Produk Makanan -->
+<div class="flex flex-col md:flex-row mx-4 md:mx-36 mt-16" id="produk_makanan">
+  <h1 class="text-2xl md:text-4xl font-bold mr-0 md:mr-10">Makanan</h1>
+  <h3 class="text-base md:text-xl pt-2 md:pt-3 font-bold">
+      Camilan dan makanan yang cocok di dompet mahasiswa
+  </h3>
+</div>
+
+<!-- Slider Produk Makanan -->
+<div class="slider-container mx-auto mt-4 max-w-screen-xl w-full relative">
+  <div class="slider-wrapper">
+      <!-- Grid Produk -->
+      <div class="slide grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_produk_makanan_1.html">
+                  <img src="resource/Image/produk 1.png" alt="Product 1" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Funwich</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 8.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_produk_makanan_2.html">
+                  <img src="resource/Image/produk 2.png" alt="Product 2" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Ayam Kremes Nyes</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 15.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_produk_makanan_3.html">
+                  <img src="resource/Image/produk 3.png" alt="Product 3" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Pisang Cokelat Lumer</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 5.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_produk_makanan_4.html">
+                  <img src="resource/Image/produk 4.png" alt="Product 4" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Bala Bala</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 1.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_produk_makanan_5.html">
+                  <img src="resource/Image/produk 5.png" alt="Product 5" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Mie Gomak Goreng</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 15.000</p>
+          </div>
+          
+      </div>
   </div>
 
-  <!-- Slider Produk Makanan -->
-  <div class="slider-container mx-auto mt-4  max-w-screen-xl w-full">
-    <div class="slider-wrapper">
-      <div class="slide grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_produk_makanan_1.html">
-            <img src="resource/Image/produk 1.png" alt="Product 1" class="w-full rounded-md">
-          </a>
+  <!-- Navigation buttons (hilang di HP) -->
+  <button class="nav-button prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#35ADC6] text-white p-2 rounded-full shadow-lg hover:bg-[#2b90a4] hidden sm:block">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+  </button>
+  <button class="nav-button next absolute top-1/2 right-0 transform -translate-y-1/2 bg-[#35ADC6] text-white p-2 rounded-full shadow-lg hover:bg-[#2b90a4] hidden sm:block">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+  </button>
+</div>
 
-          <p class="text-center">Funwich</p>
-          <p class="text-center font-bold">Rp 8.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_produk_makanan_2.html">
-            <img src="resource/Image/produk 2.png" alt="Product 2" class="w-full rounded-md">
-          </a>
+<script src="resource/JS/slider_makanan.js"></script>
+<!-- Produk Makanan End -->
 
-          <p class="text-center">Ayam Kremes Nyes</p>
-          <p class="text-center font-bold">Rp 15.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_produk_makanan_3.html">
-            <img src="resource/Image/produk 3.png" alt="Product 3" class="w-full rounded-md">
-          </a>
+<!-- Produk Makanan -->
+<div class="flex flex-col md:flex-row mx-4 md:mx-36 mt-16" id="produk_minuman">
+  <h1 class="text-2xl md:text-4xl font-bold mr-0 md:mr-10">Minuman</h1>
+  <h3 class="text-base md:text-xl pt-2 md:pt-3 font-bold">
+    Minuman Segar dan kekinian untuk menemani harimu
+  </h3>
+</div>
 
-          <p class="text-center">Pisang Cokelat Lumer</p>
-          <p class="text-center font-bold">Rp 5.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_produk_makanan_4.html">
-            <img src="resource/Image/produk 4.png" alt="Product 3" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Bala Bala</p>
-          <p class="text-center font-bold">Rp 1.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_produk_makanan_5.html">
-            <img src="resource/Image/produk 5.png" alt="Product 3" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Mie Gomak Goreng</p>
-          <p class="text-center font-bold">Rp 15.000</p>
-        </div>
+<!-- Slider Produk Makanan -->
+<div class="slider-container mx-auto mt-4 max-w-screen-xl w-full relative">
+  <div class="slider-wrapper">
+      <!-- Grid Produk -->
+      <div class="slide grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_minuman_1.html">
+                  <img src="resource/Image/minuman 1.png" alt="Product 1" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Dragonfruit Smoothies</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 10.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_minuman_2.html">
+                  <img src="resource/Image/minuman 2.png" alt="Product 2" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Chocolate Smoothies</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 10.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_minuman_3.html">
+                  <img src="resource/Image/minuman 3.png" alt="Product 3" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Strawberi Smooties</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 10.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_minuman_4.html">
+                  <img src="resource/Image/minuman 4.png" alt="Product 4" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Manggo Smoothies</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 10.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_minuman_5.html">
+                  <img src="resource/Image/minuman 5.png" alt="Product 5" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Avocado Smoothies</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 10.000</p>
+          </div>
+          
       </div>
+  </div>
 
-      <div class="slide grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_produk_makanan_4.html">
-            <img src="resource/Image/produk 4.png" alt="Product 4" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Bala Bala</p>
-          <p class="text-center font-bold">Rp 1.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_produk_makanan_5.html">
-            <img src="resource/Image/produk 5.png" alt="Product 5" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Mie Gomak Goreng</p>
-          <p class="text-center font-bold">Rp 15.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_produk_makanan_1.html">
-            <img src="resource/Image/produk 1.png" alt="Product 6" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Funwich</p>
-          <p class="text-center font-bold">Rp 8.000</p>
-        </div>
+  <!-- Navigation buttons (hilang di HP) -->
+  <button class="nav-button prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#35ADC6] text-white p-2 rounded-full shadow-lg hover:bg-[#2b90a4] hidden sm:block">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+  </button>
+  <button class="nav-button next absolute top-1/2 right-0 transform -translate-y-1/2 bg-[#35ADC6] text-white p-2 rounded-full shadow-lg hover:bg-[#2b90a4] hidden sm:block">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+  </button>
+</div>
+
+<script src="resource/JS/slider_makanan.js"></script>
+<!-- Produk Makanan End -->
+
+<!-- Produk Makanan -->
+<div class="flex flex-col md:flex-row mx-4 md:mx-36 mt-16" id="produk_elektronik">
+  <h1 class="text-2xl md:text-4xl font-bold mr-0 md:mr-10">Elektronik</h1>
+  <h3 class="text-base md:text-xl pt-2 md:pt-3 font-bold">
+    E-wallet, gadget dan aksesoris elektronik lainnya untuk kebutuhan sehari-hari
+  </h3>
+</div>
+
+<!-- Slider Produk Makanan -->
+<div class="slider-container mx-auto mt-4 max-w-screen-xl w-full relative">
+  <div class="slider-wrapper">
+      <!-- Grid Produk -->
+      <div class="slide grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_elektronik_1.html">
+                  <img src="resource/Image/elektronik 1.png" alt="Product 1" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Flashdisk Sandisk 8GB 2.0</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 35.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_elektronik_2.html">
+                  <img src="resource/Image/elektronik 2.png" alt="Product 2" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Kipas Angin Kosmos 12 Lda</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 205.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_elektronik_3.html">
+                  <img src="resource/Image/elektronik 3.png" alt="Product 3" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Powerbank Aker 10000 MAH</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 250.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_elektronik_4.html">
+                  <img src="resource/Image/elektronik 4.png" alt="Product 4" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Huafit X Aolon GTS Smart Watch</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 190.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_elektronik_5.html">
+                  <img src="resource/Image/elektronik 5.png" alt="Product 5" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Earphone Foome QA26</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 20.000</p>
+          </div>
+          
       </div>
+  </div>
+
+  <!-- Navigation buttons (hilang di HP) -->
+  <button class="nav-button prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#35ADC6] text-white p-2 rounded-full shadow-lg hover:bg-[#2b90a4] hidden sm:block">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+  </button>
+  <button class="nav-button next absolute top-1/2 right-0 transform -translate-y-1/2 bg-[#35ADC6] text-white p-2 rounded-full shadow-lg hover:bg-[#2b90a4] hidden sm:block">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+  </button>
+</div>
+
+<script src="resource/JS/slider_makanan.js"></script>
+<!-- Produk Makanan End -->
+
+<!-- Produk Makanan -->
+<div class="flex flex-col md:flex-row mx-4 md:mx-36 mt-16" id="produk_akademik">
+  <h1 class="text-2xl md:text-4xl font-bold mr-0 md:mr-10">Akademik</h1>
+  <h3 class="text-base md:text-xl pt-2 md:pt-3 font-bold">
+    Semua kebutuhan belajar, mulai dari buku hingga alat tulis
+  </h3>
+</div>
+
+<!-- Slider Produk Makanan -->
+<div class="slider-container mx-auto mt-4 max-w-screen-xl w-full relative">
+  <div class="slider-wrapper">
+      <!-- Grid Produk -->
+      <div class="slide grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_akademik_1.html">
+                  <img src="resource/Image/akademik 1.png" alt="Product 1" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Pulpen Gen Warna Warni</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 25.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_akademik_2.html">
+                  <img src="resource/Image/akademik 2.png" alt="Product 2" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Buku Tulis Spiral 50 Lembar</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 35.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_akademik_3.html">
+                  <img src="resource/Image/akademik 3.png" alt="Product 3" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Kalkulator Ilmiah Scientic</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 40.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_akademik_4.html">
+                  <img src="resource/Image/akademik 4.png" alt="Product 4" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Buku Agenda Versi Unicorn</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 20.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_akademik_5.html">
+                  <img src="resource/Image/akademik 5.png" alt="Product 5" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Buku Panduan Menulis Ilmiah</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 30.000</p>
+          </div>
+          
+      </div>
+  </div>
+
+  <!-- Navigation buttons (hilang di HP) -->
+  <button class="nav-button prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#35ADC6] text-white p-2 rounded-full shadow-lg hover:bg-[#2b90a4] hidden sm:block">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+  </button>
+  <button class="nav-button next absolute top-1/2 right-0 transform -translate-y-1/2 bg-[#35ADC6] text-white p-2 rounded-full shadow-lg hover:bg-[#2b90a4] hidden sm:block">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+  </button>
+</div>
+
+<script src="resource/JS/slider_makanan.js"></script>
+<!-- Produk Makanan End -->
+
+<!-- Produk Makanan -->
+<div class="flex flex-col md:flex-row mx-4 md:mx-36 mt-16" id="produk_fashion">
+  <h1 class="text-2xl md:text-4xl font-bold mr-0 md:mr-10">Fashion</h1>
+  <h3 class="text-base md:text-xl pt-2 md:pt-3 font-bold">
+    Pakaian dan aksesoris bergaya untuk mahasiswa
+  </h3>
+</div>
+
+<!-- Slider Produk Makanan -->
+<div class="slider-container mx-auto mt-4 max-w-screen-xl w-full relative">
+  <div class="slider-wrapper">
+      <!-- Grid Produk -->
+      <div class="slide grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_fashion_1.html">
+                  <img src="resource/Image/fashion 1.png" alt="Product 1" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Jaket Pria Varsity</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 55.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_fashion_2.html">
+                  <img src="resource/Image/fashion 2.png" alt="Product 2" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Kemeja Wanita Bloues Korea Oversize</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 60.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_fashion_3.html">
+                  <img src="resource/Image/fashion 3.png" alt="Product 3" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Jaket Pria Bomber Fashion Anti Air</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 100.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_fashion_4.html">
+                  <img src="resource/Image/fashion 4.png" alt="Product 4" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Sepatu Futsal</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 300.000</p>
+          </div>
+          <div class="bg-white p-2 md:p-4 rounded-md shadow-2xl max-w-xs mx-auto">
+              <a href="detail_fashion_5.html">
+                  <img src="resource/Image/fashion 5.png" alt="Product 5" class="w-full rounded-md">
+              </a>
+              <p class="text-center text-sm md:text-base">Tas Ransel Sekolah</p>
+              <p class="text-center font-bold text-sm md:text-base">Rp 90.000</p>
+          </div>
+          
+      </div>
+  </div>
+
+  <!-- Navigation buttons (hilang di HP) -->
+  <button class="nav-button prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#35ADC6] text-white p-2 rounded-full shadow-lg hover:bg-[#2b90a4] hidden sm:block">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+  </button>
+  <button class="nav-button next absolute top-1/2 right-0 transform -translate-y-1/2 bg-[#35ADC6] text-white p-2 rounded-full shadow-lg hover:bg-[#2b90a4] hidden sm:block">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+  </button>
+</div>
+
+<script src="resource/JS/slider_makanan.js"></script>
+<!-- Produk Makanan End -->
+
+
+
+
+
+
+<footer class="footer bg-[#0A254A] text-base-content p-6 sm:p-10 mt-16 sm:mt-24 grid grid-cols-1 sm:grid-cols-3 gap-6 items-center">
+  <!-- Logo -->
+  <div class="flex justify-center sm:justify-start">
+    <img src="resource/Image/logo-ubb.png" alt="Logo UBB" class="h-auto w-20 sm:w-32">
+  </div>
+
+  <!-- Navigasi -->
+  <div class="flex flex-col items-center sm:items-start space-y-4">
+    <a href="faq.html" class="text-white text-base sm:text-lg">Pusat Bantuan</a>
+    <a href="https://wa.me/6282289689781" class="text-white text-base sm:text-lg">Kontak Admin</a>
+  </div>
+
+  <!-- Kritik dan Saran -->
+  <div class="flex flex-col items-center sm:items-start space-y-4">
+    <h6 class="footer-title text-white text-base sm:text-lg">Kritik dan Saran</h6>
+    <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 w-full">
+      <input 
+        type="text" 
+        class="w-full sm:w-[300px] h-10 rounded-lg p-2 text-sm sm:text-base" 
+        placeholder="Masukkan kritik dan saran">
+      <button class="bg-[#35ADC6] px-4 py-2 text-sm sm:text-base rounded-lg text-white w-full sm:w-auto">
+        Kirim
+      </button>
     </div>
-
-    <!-- Navigation buttons -->
-    <button class="nav-button prev">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-    <button class="nav-button next">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
   </div>
+</footer>
 
-  <script src="resource/JS/slider_makanan.js"></script>
-  <!-- Produk Makanan End -->
-
-  <!-- Produk Minuman -->
-  <div class="flex mx-36 mt-16" id="produk_minuman">
-    <h1 class="mr-10 text-4xl font-bold">Minuman</h1>
-    <h3 class="text-xl pt-3 font-bold">Minuman Segar dan kekinian untuk menemani harimu</h3>
-  </div>
-
-  <!-- Slider Produk Minuman-->
-  <div class="slider-container-minuman mx-auto mt-4  max-w-screen-xl w-full">
-    <div class="slider-wrapper-minuman">
-      <div class="slide-minuman grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_minuman_1.html">
-            <img src="resource/Image/minuman 1.png" alt="Product 1" class="w-full rounded-md">
-          </a> 
-          <p class="text-center">Dragonfruit Smoothies</p>
-          <p class="text-center font-bold">Rp 10.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_minuman_2.html">
-            <img src="resource/Image/minuman 2.png" alt="Product 2" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Chocolate Smoothies</p>
-          <p class="text-center font-bold">Rp 10.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_minuman_3.html">
-            <img src="resource/Image/minuman 3.png" alt="Product 3" class="w-full rounded-md">
-          </a>        
-          <p class="text-center">Strawberi Smooties</p>
-          <p class="text-center font-bold">Rp 10.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_minuman_4.html">
-            <img src="resource/Image/minuman 4.png" alt="Product 3" class="w-full rounded-md">
-          </a>      
-          <p class="text-center">Manggo Smoothies</p>
-          <p class="text-center font-bold">Rp 10.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_minuman_5.html">
-            <img src="resource/Image/minuman 5.png" alt="Product 3" class="w-full rounded-md">
-          </a>         
-          <p class="text-center">Avocado Smoothies</p>
-          <p class="text-center font-bold">Rp 10.000</p>
-        </div>
-      </div>
-
-      <div class="slide-minuman grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_minuman_3.html">
-            <img src="resource/Image/minuman 3.png" alt="Product 4" class="w-full rounded-md">
-          </a>          
-          <p class="text-center">Strawberi Smooties</p>
-          <p class="text-center font-bold">Rp 10.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_minuman_4.html">
-            <img src="resource/Image/minuman 4.png" alt="Product 5" class="w-full rounded-md">
-          </a>        
-          <p class="text-center">Manggo Smoothies</p>
-          <p class="text-center font-bold">Rp 10.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_minuman_1.html">
-            <img src="resource/Image/minuman 1.png" alt="Product 6" class="w-full rounded-md">
-          </a>      
-          <p class="text-center">Dragonfruit Smoothies</p>
-          <p class="text-center font-bold">Rp 10.000</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Navigation buttons -->
-    <button class="nav-button-minuman prev-minuman">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-    <button class="nav-button-minuman next-minuman">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
-  </div>
-
-  <script src="resource/JS/slider_minuman.js"></script>
-  <!-- Produk Minuman End -->
-
-  <!-- Produk Eletronik -->
-  <div class="flex mx-36 mt-16" id="produk_elektronik">
-    <h1 class="mr-10 text-4xl font-bold">Elektronik</h1>
-    <h3 class="text-xl pt-3 font-bold">E-wallet, gadget dan aksesoris elektronik lainnya untuk kebutuhan sehari-hari
-    </h3>
-  </div>
-
-  <!-- Slider Produk Elektronik-->
-  <div class="slider-container-elektronik mx-auto mt-4  max-w-screen-xl w-full">
-    <div class="slider-wrapper-elektronik">
-      <div class="slide-elektronik grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_elektronik_1.html">
-            <img src="resource/Image/elektronik 1.png" alt="Product 1" class="w-full rounded-md">
-          </a>     
-          <p class="text-center">Flashdisk Sandisk 8GB 2.0</p>
-          <p class="text-center font-bold">Rp 35.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_elektronik_2.html">
-            <img src="resource/Image/elektronik 2.png" alt="Product 2" class="w-full rounded-md">
-          </a>       
-          <p class="text-center">Kipas Angin Kosmos 12 Lda</p>
-          <p class="text-center font-bold">Rp 205.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_elektronik_3.html">
-            <img src="resource/Image/elektronik 3.png" alt="Product 3" class="w-full rounded-md">
-          </a>     
-          <p class="text-center">Powerbank Aker 10000 MAH</p>
-          <p class="text-center font-bold">Rp 250.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_elektronik_4.html">
-            <img src="resource/Image/elektronik 4.png" alt="Product 3" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Huafit X Aolon GTS Smart Watch</p>
-          <p class="text-center font-bold">Rp 190.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_elektronik_5.html">
-            <img src="resource/Image/elektronik 5.png" alt="Product 3" class="w-full rounded-md">
-          </a>  
-          <p class="text-center">Earphone Foome QA26</p>
-          <p class="text-center font-bold">Rp 20.000</p>
-        </div>
-      </div>
-
-      <div class="slide-elektronik grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_elektronik_3.html">
-            <img src="resource/Image/elektronik 3.png" alt="Product 4" class="w-full rounded-md">
-          </a> 
-          <p class="text-center">Powerbank Aker 10000 MAH</p>
-          <p class="text-center font-bold">Rp 250.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_elektronik_1.html">
-            <img src="resource/Image/elektronik 1.png" alt="Product 5" class="w-full rounded-md">
-          </a>  
-          <p class="text-center">Flashdisk Sandisk 8GB 2.0</p>
-          <p class="text-center font-bold">Rp 35.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_elektronik_4.html">
-            <img src="resource/Image/elektronik 4.png" alt="Product 6" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Huafit X Aolon GTS Smart Watch</p>
-          <p class="text-center font-bold">Rp 190.000</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Navigation buttons -->
-    <button class="nav-button-elektronik prev-elektronik" id="prev_elektronik">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-    <button class="nav-button-elektronik next-elektronik">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
-  </div>
-
-  <script src="resource/JS/slider_elektronik.js"></script>
-  <!-- Produk Elektronik End -->
+<!-- Footer Copyright -->
+<div class="bg-[#35ADC6] text-center text-white py-3 text-sm sm:text-base">
+  &copy; 2024 Lapak UBB
+</div>
 
 
 
-
-
-
-
-
-
-  <!-- Produk Akademik -->
-  <div class="flex mx-36 mt-16" id="produk_akademik">
-    <h1 class="mr-10 text-4xl font-bold">Akademik</h1>
-    <h3 class="text-xl pt-3 font-bold">Semua kebutuhan belajar, mulai dari buku hingga alat tulis</h3>
-  </div>
-
-  <!-- Slider Produk Akademik-->
-  <div class="slider-container-akademik mx-auto mt-4  max-w-screen-xl w-full">
-    <div class="slider-wrapper-akademik">
-      <div class="slide-akademik grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_akademik_1.html">
-            <img src="resource/Image/akademik 1.png" alt="Product 1" class="w-full rounded-md">
-          </a>    
-          <p class="text-center">Pulpen Gen Warna Warni</p>
-          <p class="text-center font-bold">Rp 25.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_akademik_2.html">
-            <img src="resource/Image/akademik 2.png" alt="Product 2" class="w-full rounded-md">
-          </a>       
-          <p class="text-center">Buku Tulis Spiral 50 Lembar</p>
-          <p class="text-center font-bold">Rp 35.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_akademik_3.html">
-            <img src="resource/Image/akademik 3.png" alt="Product 3" class="w-full rounded-md">
-          </a>      
-          <p class="text-center">Kalkulator Ilmiah Scientic</p>
-          <p class="text-center font-bold">Rp 40.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_akademik_4.html">
-            <img src="resource/Image/akademik 4.png" alt="Product 3" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Buku Agenda Versi Unicorn</p>
-          <p class="text-center font-bold">Rp 20.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_akademik_5.html">
-            <img src="resource/Image/akademik 5.png" alt="Product 3" class="w-full rounded-md">
-          </a>    
-          <p class="text-center">Buku Panduan Menulis Ilmiah</p>
-          <p class="text-center font-bold">Rp 30.000</p>
-        </div>
-      </div>
-
-      <div class="slide-akademik grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_akademik_1.html">
-            <img src="resource/Image/akademik 1.png" alt="Product 4" class="w-full rounded-md">
-          </a>      
-          <p class="text-center">Pulpen Gen Warna Warni</p>
-          <p class="text-center font-bold">Rp 25.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_akademik_3.html">
-            <img src="resource/Image/akademik 3.png" alt="Product 5" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Kalkulator Ilmiah Scientic</p>
-          <p class="text-center font-bold">Rp 40.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_akademik_5.html">
-            <img src="resource/Image/akademik 5.png" alt="Product 6" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Buku Panduan Menulis Ilmiah</p>
-          <p class="text-center font-bold">Rp 30.000</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Navigation buttons -->
-    <button class="nav-button-akademik prev-akademik">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-    <button class="nav-button-akademik next-akademik">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
-  </div>
-
-  <script src="resource/JS/slider_akademik.js"></script>
-  <!-- Produk Akademik End -->
-
-
-
-
-
-
-
-
-  <!-- Produk Fashion -->
-  <div class="flex mx-36 mt-16" id="produk_fashion">
-    <h1 class="mr-10 text-4xl font-bold">Fashion</h1>
-    <h3 class="text-xl pt-3 font-bold">Pakaian dan aksesoris bergaya untuk mahasiswa</h3>
-  </div>
-
-  <!-- Slider Produk Fashion-->
-  <div class="slider-container-fashion mx-auto mt-4  max-w-screen-xl w-full">
-    <div class="slider-wrapper-fashion">
-      <div class="slide-fashion grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_fashion_1.html">
-            <img src="resource/Image/fashion 1.png" alt="Product 1" class="w-full rounded-md">
-          </a>  
-          <p class="text-center">Jaket Pria Varsity</p>
-          <p class="text-center font-bold">Rp 55.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_fashion_2.html">
-            <img src="resource/Image/fashion 2.png" alt="Product 2" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Kemeja Wanita Bloues Korea Oversize</p>
-          <p class="text-center font-bold">Rp 60.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_fashion_3.html">
-            <img src="resource/Image/fashion 3.png" alt="Product 3" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Jaket Pria Bomber Fashion Anti Air</p>
-          <p class="text-center font-bold">Rp 100.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_fashion_4.html">
-            <img src="resource/Image/fashion 4.png" alt="Product 3" class="w-full rounded-md">
-          </a>  
-          <p class="text-center">Sepatu Futsal</p>
-          <p class="text-center font-bold">Rp 300.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_fashion_5.html">
-            <img src="resource/Image/fashion 5.png" alt="Product 3" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Tas Ransel Sekolah</p>
-          <p class="text-center font-bold">Rp 90.000</p>
-        </div>
-      </div>
-
-      <div class="slide-fashion grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_fashion_2.html">
-            <img src="resource/Image/fashion 2.png" alt="Product 4" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Kemeja Wanita Bloues Korea Oversize</p>
-          <p class="text-center font-bold">Rp 60.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_fashion_4.html">
-            <img src="resource/Image/fashion 4.png" alt="Product 5" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Sepatu Futsal</p>
-          <p class="text-center font-bold">Rp 300.000</p>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-2xl max-w-xs mx-auto">
-          <a href="detail_fashion_1.html">
-            <img src="resource/Image/fashion 1.png" alt="Product 6" class="w-full rounded-md">
-          </a>
-          <p class="text-center">Jaket Pria Varsity</p>
-          <p class="text-center font-bold">Rp 55.000</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Navigation buttons -->
-    <button class="nav-button-fashion prev-fashion">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-    <button class="nav-button-fashion next-fashion">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
-  </div>
-
-  <script src="resource/JS/slider_fashion.js"></script>
-  <!-- Produk Fashion End -->
-
-
-
-
-  <footer class="footer bg-[#0A254A]  text-base-content p-10 mt-24">
-    <img src="resource/Image/logo-ubb.png" alt="" class="h-auto w-32">
-    <nav>
-      <a href="faq.html" class="text-white text-lg">Pusat Bantuan</a>
-      <a href="https://wa.me/6282289689781" class="text-white mt-5 text-lg ">Kontak Admin</a>
-    </nav>
-
-    <nav>
-      <h6 class="footer-title text-white">Kritik dan Saran</h6>
-      <input type="search" class="w-[400px] h-10 rounded-lg p-4" placeholder="Kritik dan Saran">
-      <button class="bg-[#35ADC6] px-5 rounded-lg py-2 text-white">Kirim</button>
-    </nav>
-
-  </footer>
-  <div class="bg-[#35ADC6] text-center text-white">@ 2024 Lapak UBB</div>
-
-
-
-
-
+      <script>
+        // Fungsi untuk toggle dropdown menu
+        function toggleDropdown() {
+            const dropdownMenu = document.getElementById("dropdownMenu");
+            dropdownMenu.classList.toggle("hidden"); // Tambah/Remove kelas 'hidden'
+        }
+    
+        // Event listener untuk menutup dropdown jika klik di luar area
+        document.addEventListener("click", function (event) {
+            const dropdownMenu = document.getElementById("dropdownMenu");
+            const profileButton = dropdownMenu.previousElementSibling; // Tombol dropdown
+    
+            // Periksa apakah klik di luar tombol dropdown atau dropdown menu
+            if (!profileButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.add("hidden");
+            }
+        });
+    </script>
+    
 
 </body>
-
 </html>
