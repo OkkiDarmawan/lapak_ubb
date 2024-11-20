@@ -9,70 +9,89 @@
     <script src="resource/JS/searchLogic.js"></script>
 </head>
 <body >
-    <div class="navbar bg-[#0A254A] flex justify-between items-center">
-        <div class="flex items-center">
-          <img src="resource/Image/logo-ubb.png" alt="" class="size-16 w-20 ml-8"> <!--Logo Lapak UBB-->
-          <!-- Search Barang -->
-          <div class="">
-            <input type="search" name="" id="inputSearch" class="bg-white w-full lg:w-[800px] rounded-lg  h-10 ml-16 p-4"
-              placeholder="Search The Product Here">
-          </div>
-          <!-- Search Barang End-->
+    <!-- Navbar (Tetap) -->
+    <div class="navbar bg-[#0A254A] flex justify-between items-center px-4 md:px-8 h-20">
+      <div class="flex items-center space-x-4">
+        <img src="resource/Image/logo-ubb.png" alt="Logo" class="w-16 md:w-20">
+        <div class="flex-1">
+          <input
+            type="search"
+            id="inputSearch"
+            class="bg-white w-full sm:w-[500px] md:w-[600px] lg:w-[800px] rounded-lg h-10 px-4"
+            placeholder="Search The Product Here"
+          />
         </div>
-    
-        <div class="flex items-center">
-          <img src="resource/Image/keranjang.png" alt="" class="size-12 mx-8 cursor-pointer" onclick="window.location.href='keranjang_elektronik_3.html'"> <!--Logo Keranjang-->
-          <div tabindex="0" role="button" class="mr-8" onclick="toggleDropdown()">
-            <div class="w-10 rounded-full">
-              <img alt="Tailwind CSS Navbar component" src="resource/Image/LOGO GUESS.png" class="" />
-            </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <img src="resource/Image/keranjang.png" alt="Keranjang" class="w-8 md:w-10 cursor-pointer" onclick="window.location.href='keranjang_5.html'">
+        <div tabindex="0" role="button" class="relative" onclick="toggleDropdown()">
+          <div class="w-8 md:w-10 rounded-full">
+            <img src="resource/Image/LOGO GUESS.png" alt="Profile Icon" />
           </div>
-          <div id="dropdownMenu" class="absolute right-0 mt-56 w-48 bg-white rounded-lg shadow-lg hidden z-50" >
+          <div
+            id="dropdownMenu"
+            class="absolute right-0 mt-12 w-48 bg-white rounded-lg shadow-lg hidden z-50"
+          >
             <ul class="py-2">
               <a href="home.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a>
-              <a href="mainframe.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
-             <a href="tokoku.html">  <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a>
-            <a href="index.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
+              <a href="mainframe.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
+              <a href="tokoku.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a>
+              <a href="index.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
             </ul>
           </div>
         </div>
       </div>
-    
+    </div>
     <script src="resource/JS/drop_profile.js"></script>
-    
-      <div class="flex items-center justify-center min-h-[80vh]">
-        <div class="bg-white p-10 rounded-lg shadow-2xl w-full max-w-4xl flex items-center space-x-6">
-          <!-- Gambar Produk -->
-          <img src="resource/Image/box elektronik 3.png" alt="Produk Image" class="w-1/2 rounded-lg">
-          
-          <!-- Konten Teks -->
-          <div>
-            <h2 class="text-4xl font-semibold mb-20">Powerbank Aker 10000 MAH</h2>
-            <p class=" text-4xl font-semibold">Rp 250.000</p>
-            <p class=" text-2xl font-semibold mt-5">Deskripsi : Powerbank Original</p>
-            <p class=" text-2xl font-semibold mt-5">Owner : Jeff Cell</p>
-            <div class="flex flex-col">
-              <div class="flex">
-                <button class="bg-[#35ADC6] px-5 rounded-lg mt-14 mx-4 w-1/2 h-10  text-2xl text-white" id="btnKeranjang" onclick="window.location.href='pembayaran_elektronik_3.html'">Beli</button>
-                <div class="mt-14">
-                  <button class="px-2 py-1 h-10 text-2xl font-medium" id="btnKurang">-</button>
-                  <input type="number" value="1" class="w-10 h-10 text-center border-2 border-black" id="qtyInput" readonly>
-                  <button class="px-2 py-1 h-10 text-xl font-medium" id="btnTambah">+</button>
-                </div>
-               <script src="resource/JS/payment_produk.js"></script>
+  
+    <!-- Bagian Detail Produk -->
+    <div class="flex items-center justify-center min-h-[80vh] px-4">
+      <div class="bg-white p-5 md:p-10 rounded-lg shadow-2xl w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Gambar Produk -->
+        <img src="resource/Image/box elektronik 3.png" alt="Produk Image" class="w-full h-auto rounded-lg">
+        
+        <!-- Konten Teks -->
+        <div>
+          <h2 class="text-2xl md:text-4xl font-semibold mb-4 md:mb-6">Powerbank Aker 10000 MAH</h2>
+          <p class="text-lg md:text-2xl font-semibold">Rp 250.000</p>
+          <p class="text-base md:text-lg font-medium mt-4">Deskripsi: Pilih kemudian bisa langsung dicontact untuk lebih lanjut</p>
+          <p class="text-base md:text-lg font-medium mt-2">Owner: Heldi</p>
+          <div class="flex flex-col mt-6 space-y-4 ">
+            <div class="flex items-center space-x-2">
+              <button class="bg-[#35ADC6] px-4 py-2 rounded-lg text-white w-full md:w-1/2 text-sm md:text-lg" id="btnKeranjang" onclick="window.location.href='pembayaran_elektronik_3.html'">Beli</button>
+              <div class="flex items-center space-x-2">
+                <button class="px-2 py-1 border border-gray-300 rounded" id="btnKurang">-</button>
+                <input type="number" value="1" class="w-12 text-center border border-gray-300 rounded" id="qtyInput" readonly>
+                <button class="px-2 py-1 border border-gray-300 rounded" id="btnTambah">+</button>
               </div>
-            
-              <button class="bg-[#35ADC6] px-5 rounded-lg mt-4 mx-4 w-full h-10  text-2xl text-white" id="btnKeranjang" onclick="addKeranjang()">Keranjang</button>
-              <button class="bg-red-600 px-5 rounded-lg mt-4 mx-4 w-full h-10 text-2xl text-white" onclick="history.back()">Back</button>
             </div>
+            <button class="bg-[#35ADC6] px-4 py-2 rounded-lg text-white w-full text-sm md:text-lg" onclick="addKeranjang()">Keranjang</button>
+            <button class="bg-red-600 px-4 py-2 rounded-lg text-white w-full text-sm md:text-lg" onclick="history.back()">Back</button>
           </div>
         </div>
       </div>
-      <script>
-        const btnKeranjang = document.getElementById("btnKeranjang")
-        function addKeranjang(){
-          alert ("Berhasil Ditambahkan");
+    </div>
+  
+  <script src="resource/JS/payment_produk.js"></script>
+  
+    <script>
+      function addKeranjang() {
+        alert("Berhasil Ditambahkan");
+      }
+  
+      function toggleDropdown() {
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        dropdownMenu.classList.toggle("hidden");
+      }
+  
+      document.addEventListener("click", function (event) {
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        const profileButton = dropdownMenu.previousElementSibling;
+  
+        if (!profileButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+          dropdownMenu.classList.add("hidden");
         }
-        </script>
+      });
+    </script>
 </body>
 </html>
