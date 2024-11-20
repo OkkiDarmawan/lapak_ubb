@@ -54,7 +54,7 @@
             <p class=" text-2xl font-semibold mt-5">Owner : Yudi</p>
             <div class="flex flex-col">
               <div class="flex">
-                <button class="bg-[#35ADC6] px-5 rounded-lg mt-14 mx-4 w-1/2 h-10  text-2xl text-white" id="btnKeranjang" onclick="window.location.href='metode_pembayaran_1.html'">Beli</button>
+                <button class="bg-[#35ADC6] px-5 rounded-lg mt-14 mx-4 w-1/2 h-10  text-2xl text-white" id="btnKeranjang" onclick="addKeranjang(), window.location.href='login.html'">Beli</button>
                 <div class="mt-14">
                   <button class="px-2 py-1 h-10 text-2xl font-medium" id="btnKurang">-</button>
                   <input type="number" value="1" class="w-10 h-10 text-center border-2 border-black" id="qtyInput" readonly>
@@ -63,7 +63,7 @@
                <script src="resource/JS/payment_produk.js"></script>
               </div>
             
-              <button class="bg-[#35ADC6] px-5 rounded-lg mt-4 mx-4 w-full h-10  text-2xl text-white" id="btnKeranjang" onclick="addKeranjang()">Keranjang</button>
+              <button class="bg-[#35ADC6] px-5 rounded-lg mt-4 mx-4 w-full h-10  text-2xl text-white" id="btnKeranjang" onclick="addKeranjang(),window.location.href='login.html'">Keranjang</button>
               <button class="bg-red-600 px-5 rounded-lg mt-4 mx-4 w-full h-10 text-2xl text-white" onclick="history.back()">Back</button>
             </div>
           </div>
