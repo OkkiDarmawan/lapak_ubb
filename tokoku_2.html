@@ -9,35 +9,49 @@
     <script src="resource/JS/searchLogic.js"></script>
 </head>
 <body >
-    <div class="navbar bg-[#0A254A] flex justify-between items-center">
-        <div class="flex items-center">
-          <img src="resource/Image/logo-ubb.png" alt="" class="size-16 w-20 ml-8"> <!--Logo Lapak UBB-->
-          <!-- Search Barang -->
-          <div class="">
-            <input type="search" name="" id="inputSearch" class="bg-white w-full lg:w-[800px] rounded-lg  h-10 ml-16 p-4"
-              placeholder="Search The Product Here">
-          </div>
-          <!-- Search Barang End-->
+  <div class="navbar bg-[#0A254A] flex justify-between items-center px-4 md:px-8 h-20">
+    <!-- Kiri: Logo dan Search -->
+    <div class="flex items-center space-x-4">
+      <!-- Logo -->
+      <img src="resource/Image/logo-ubb.png" alt="Logo" class="w-16 md:w-20">
+  
+      <!-- Search Barang -->
+      <div class="flex-1">
+        <input
+          type="search"
+          id="inputSearch"
+          class="bg-white w-full sm:w-[500px] md:w-[600px] lg:w-[800px] rounded-lg h-10 px-4"
+          placeholder="Search The Product Here"
+        />
+      </div>
+    </div>
+  
+    <!-- Kanan: Icon Keranjang dan Dropdown -->
+    <div class="flex items-center space-x-4">
+      <!-- Keranjang -->
+      <img src="resource/Image/keranjang.png" alt="Keranjang" class="w-8 md:w-10 cursor-pointer" onclick="window.location.href='keranjang_home.html'">
+  
+      <!-- Profile Dropdown -->
+      <div tabindex="0" role="button" class="relative" onclick="toggleDropdown()">
+        <div class="w-8 md:w-10 rounded-full">
+          <img src="resource/Image/LOGO GUESS.png" alt="Profile Icon" />
         </div>
-    
-        <div class="flex items-center">
-          <img src="resource/Image/keranjang.png" alt="" class="size-12 mx-8 cursor-pointer" onclick="window.location.href='keranjang_1.html'"> <!--Logo Keranjang-->
-          <div tabindex="0" role="button" class="mr-8" onclick="toggleDropdown()">
-            <div class="w-10 rounded-full">
-              <img alt="Tailwind CSS Navbar component" src="resource/Image/LOGO GUESS.png" class="" />
-            </div>
-          </div>
-          <div id="dropdownMenu" class="absolute right-0 mt-56 w-48 bg-white rounded-lg shadow-lg hidden z-50" >
-            <ul class="py-2">
-              <a href="home.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a>
-                    <a href="mainframe.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
-                   <a href="tokoku.html">  <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a>
-                  <a href="index.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
-            </ul>
-          </div>
+  
+        <!-- Dropdown Menu -->
+        <div
+          id="dropdownMenu"
+          class="absolute right-0 mt-12 w-48 bg-white rounded-lg shadow-lg hidden z-50"
+        >
+          <ul class="py-2">
+            <a href="home.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a>
+            <a href="mainframe.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
+            <a href="tokoku.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a>
+            <a href="index.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
+          </ul>
         </div>
       </div>
-    
+    </div>
+  </div>
     <script src="resource/JS/drop_profile.js"></script>
     
      
@@ -45,50 +59,46 @@
 
 
 
-
- <!-- Main Content -->
- <div class="flex">
-  <!-- Sidebar -->
-  <div class="sidebar bg-gray-100 p-8 h-svh">
-      <h2 class="font-semibold text-lg mb-8">Profil Saya</h2>
-      <button class="block w-full text-left px-4 py-2 bg-gray-300 rounded-lg mb-4 font-semibold hover:bg-[#35ADC6]">Produk</button>
-      <button class="block w-full text-left px-4 py-2 bg-gray-300 rounded-lg mb-6 font-semibold hover:bg-[#35ADC6]" onclick="window.location.href='payment_toko_2.html'">Payment</button>
-    
-  </div>
-
-  <!-- Product Gallery -->
-  <div class="product-gallery p-8 ">
-      <div class="flex justify-between items-center mb-4">
-          <h2 class="text-2xl font-semibold">Semua Barang</h2>
-          <button class="bg-[#35ADC6] text-white px-4 py-2 rounded-lg" onclick="window.location.href='add_produk.html'">Add</button>
+    <div class="flex flex-col lg:flex-row">
+      <!-- Sidebar -->
+      <div class="sidebar bg-gray-100 p-8 w-full lg:w-1/4">
+        <h2 class="font-semibold text-lg mb-8">Profil Saya</h2>
+        <button class="block w-full text-center px-4 py-2 bg-gray-300 rounded-lg mb-4 font-semibold hover:bg-[#35ADC6]">Produk</button>
+        <button class="block w-full text-center px-4 py-2 bg-gray-300 rounded-lg mb-6 font-semibold hover:bg-[#35ADC6]" onclick="window.location.href='payment_toko.html'">Payment</button>
       </div>
-      <div class="grid grid-cols-5 gap-4">
+    
+      <!-- Product Gallery -->
+      <div class="product-gallery p-4 lg:p-8 w-full">
+        <div class="flex flex-col md:flex-row md:justify-between items-start md:items-center mb-4">
+          <h2 class="text-xl md:text-2xl font-semibold mb-2 md:mb-0">Semua Barang</h2>
+          <button class="bg-[#35ADC6] text-white px-4 py-2 rounded-lg w-full md:w-auto" onclick="window.location.href='add_produk.html'">Add</button>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           <!-- Product Cards -->
           <div class="bg-white p-4 rounded-lg shadow-2xl">
-              <img src="resource/Image/produk 1.png" alt="Funwich" class="rounded-md mb-4">
-              <h3 class="text-lg font-semibold">Funwich</h3>
-              <p class="text-gray-600">Rp 8.000</p>
+            <img src="resource/Image/produk 1.png" alt="Funwich" class="rounded-md mb-4">
+            <h3 class="text-sm sm:text-lg font-semibold">Funwich</h3>
+            <p class="text-sm text-gray-600">Rp 8.000</p>
           </div>
           <div class="bg-white p-4 rounded-lg shadow-2xl">
-              <img src="resource/Image/minuman 1.png" alt="Dragonfruit Smoothies" class="rounded-md mb-4">
-              <h3 class="text-lg font-semibold">Dragonfruit Smoothies</h3>
-              <p class="text-gray-600">Rp 10.000</p>
+            <img src="resource/Image/minuman 1.png" alt="Dragonfruit Smoothies" class="rounded-md mb-4">
+            <h3 class="text-sm sm:text-lg font-semibold">Dragonfruit Smoothies</h3>
+            <p class="text-sm text-gray-600">Rp 10.000</p>
           </div>
           <div class="bg-white p-4 rounded-lg shadow-2xl">
-              <img src="resource/Image/akademik 1.png" alt="Pisang Cokelat Lumer" class="rounded-md mb-4">
-              <h3 class="text-lg font-semibold">Pulpen Gen Warna Warni</h3>
-              <p class="text-gray-600">Rp 25.000</p>
+            <img src="resource/Image/akademik 1.png" alt="Pulpen Gen Warna Warni" class="rounded-md mb-4">
+            <h3 class="text-sm sm:text-lg font-semibold">Pulpen Gen Warna Warni</h3>
+            <p class="text-sm text-gray-600">Rp 25.000</p>
           </div>
           <div class="bg-white p-4 rounded-lg shadow-2xl">
-              <img src="resource/Image/fashion 1.png" alt="Pisang Cokelat Lumer" class="rounded-md mb-4">
-              <h3 class="text-lg font-semibold">Jaket Pria Varsity</h3>
-              <p class="text-gray-600">Rp 55.000</p>
+            <img src="resource/Image/fashion 1.png" alt="Pulpen Gen Warna Warni" class="rounded-md mb-4">
+            <h3 class="text-sm sm:text-lg font-semibold">Jaket Pria Varsity</h3>
+            <p class="text-sm text-gray-600">Rp 55.000</p>
           </div>
+        </div>
       </div>
-  </div>
-</div>
-
-
+    </div>
+    
 
 
 

@@ -10,72 +10,86 @@
     <script src="resource/JS/searchLogic.js"></script>
 </head>
 <body >
-    <div class="navbar bg-[#0A254A] flex justify-between items-center">
-        <div class="flex items-center">
-          <img src="resource/Image/logo-ubb.png" alt="" class="size-16 w-20 ml-8"> <!--Logo Lapak UBB-->
-          <!-- Search Barang -->
-          <div class="">
-            <input type="search" name="" id="inputSearch" class="bg-white w-full lg:w-[800px] rounded-lg  h-10 ml-16 p-4"
-              placeholder="Search The Product Here">
-          </div>
-          <!-- Search Barang End-->
+  <div class="navbar bg-[#0A254A] flex justify-between items-center px-4 md:px-8 h-20">
+    <!-- Kiri: Logo dan Search -->
+    <div class="flex items-center space-x-4">
+      <!-- Logo -->
+      <img src="resource/Image/logo-ubb.png" alt="Logo" class="w-16 md:w-20">
+  
+      <!-- Search Barang -->
+      <div class="flex-1">
+        <input
+          type="search"
+          id="inputSearch"
+          class="bg-white w-full sm:w-[500px] md:w-[600px] lg:w-[800px] rounded-lg h-10 px-4"
+          placeholder="Search The Product Here"
+        />
+      </div>
+    </div>
+  
+    <!-- Kanan: Icon Keranjang dan Dropdown -->
+    <div class="flex items-center space-x-4">
+      <!-- Keranjang -->
+      <img src="resource/Image/keranjang.png" alt="Keranjang" class="w-8 md:w-10 cursor-pointer" onclick="window.location.href='keranjang_home.html'">
+  
+      <!-- Profile Dropdown -->
+      <div tabindex="0" role="button" class="relative" onclick="toggleDropdown()">
+        <div class="w-8 md:w-10 rounded-full">
+          <img src="resource/Image/LOGO GUESS.png" alt="Profile Icon" />
         </div>
-    
-        <div class="flex items-center">
-          <img src="resource/Image/keranjang.png" alt="" class="size-12 mx-8 cursor-pointer" onclick="window.location.href='keranjang_1.html'"> <!--Logo Keranjang-->
-          <div tabindex="0" role="button" class="mr-8" onclick="toggleDropdown()">
-            <div class="w-10 rounded-full">
-              <img alt="Tailwind CSS Navbar component" src="resource/Image/LOGO GUESS.png" class="" />
-            </div>
-          </div>
-          <div id="dropdownMenu" class="absolute right-0 mt-56 w-48 bg-white rounded-lg shadow-lg hidden z-50" >
-            <ul class="py-2">
-              <a href="home.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a>
-              <a href="mainframe.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
-             <a href="tokoku.html">  <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a>
-            <a href="index.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
-            </ul>
-          </div>
+  
+        <!-- Dropdown Menu -->
+        <div
+          id="dropdownMenu"
+          class="absolute right-0 mt-12 w-48 bg-white rounded-lg shadow-lg hidden z-50"
+        >
+          <ul class="py-2">
+            <a href="home.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a>
+            <a href="mainframe.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
+            <a href="tokoku.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a>
+            <a href="index.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
+          </ul>
         </div>
       </div>
-    
+    </div>
+  </div>
     <script src="resource/JS/drop_profile.js"></script>
 
-    
-    <div class="flex">
-        <!-- Sidebar -->
-        <div class="sidebar bg-gray-100 p-8 ">
-            <h2 class="font-semibold text-lg mb-4">Profil Saya</h2>
-            <button class="block w-full text-left px-4 py-2 bg-gray-300 rounded-lg mb-2 font-semibold hover:bg-[#35ADC6]" onclick="window.location.href='tokoku.html'">Produk</button>
-            <button class="block w-full text-left px-4 py-2 bg-gray-300 rounded-lg mb-6 font-semibold hover:bg-[#35ADC6]" onclick="window.location.href='payment_toko.html'">Payment</button>
+    <div class="flex flex-wrap">
+      <!-- Sidebar -->
+      <div class="sidebar bg-gray-100 p-8 w-full md:w-1/4">
+        <h2 class="font-semibold text-lg mb-4">Profil Saya</h2>
+        <button class="block w-full text-center px-4 py-2 bg-gray-300 rounded-lg mb-2 font-semibold hover:bg-[#35ADC6]" onclick="window.location.href='tokoku.html'">Produk</button>
+        <button class="block w-full text-center px-4 py-2 bg-gray-300 rounded-lg mb-6 font-semibold hover:bg-[#35ADC6]" onclick="window.location.href='payment_toko.html'">Payment</button>
+      </div>
+  
+      <!-- Payment Box -->
+      <div class="flex-grow flex justify-center items-center p-8 w-full md:w-3/4">
+        <div class="bg-white rounded-lg shadow-2xl p-6 w-full max-w-md">
+          <form>
+            <!-- Input untuk masing-masing metode pembayaran -->
+            <div class="flex items-center mb-4">
+              <img src="resource/Image/icon BRI.png" alt="BRI" class="w-12 h-12">
+              <input type="number" placeholder="Nominal" class="bg-gray-300 flex-1 h-10 rounded-lg px-4 ml-4">
+            </div>
+            <div class="flex items-center mb-4">
+              <img src="resource/Image/icon Dana.png" alt="Dana" class="w-12 h-12">
+              <input type="number" placeholder="Nominal" class="bg-gray-300 flex-1 h-10 rounded-lg px-4 ml-4">
+            </div>
+            <div class="flex items-center mb-4">
+              <img src="resource/Image/icon Gopay.png" alt="Gopay" class="w-12 h-12">
+              <input type="number" placeholder="Nominal" class="bg-gray-300 flex-1 h-10 rounded-lg px-4 ml-4">
+            </div>
+            <div class="flex items-center mb-4">
+              <img src="resource/Image/icon Shoppe.png" alt="Shopee" class="w-12 h-12">
+              <input type="number" placeholder="Nominal" class="bg-gray-300 flex-1 h-10 rounded-lg px-4 ml-4">
+            </div>
+            <!-- Tombol simpan -->
+            <button class="bg-[#35ADC6] w-full h-12 rounded-lg mt-4 text-xl text-white" type="button" onclick="window.location.href='tokoku.html'">Simpan</button>
+          </form>
         </div>
-
-    
-<!-- Payment Box -->
-<div class="flex-grow flex justify-center items-center p-8 min-h-[80vh]">
-    <div class="bg-white rounded-lg shadow-2xl p-10 w-[500px] text-center">
-      <form action="">
-        <div class="flex">
-            <img src="resource/Image/icon BRI.png" alt="BRI" class="py-2">
-            <input type="number" class="bg-gray-300 ml-8 h-10 content-center mt-6 px-4">
-        </div>
-        <div class="flex">
-            <img src="resource/Image/icon Dana.png" alt="BRI" class="py-2">
-            <input type="number" class="bg-gray-300 ml-8 h-10 content-center mt-6 px-4">
-        </div>
-        <div class="flex">
-            <img src="resource/Image/icon Gopay.png" alt="BRI" class="py-2">
-            <input type="number" class="bg-gray-300 ml-8 h-10 content-center mt-6 px-4">
-        </div>
-        <div class="flex">
-            <img src="resource/Image/icon Shoppe.png" alt="BRI" class="py-2">
-            <input type="number" class="bg-gray-300 ml-8 h-10 content-center mt-6 px-4">
-        </div>
-        <button class="bg-[#35ADC6] px-5 h-12 rounded-lg mt-8 text-2xl text-white ml-[300px]" type="button" onclick="window.location.href='tokoku.html'">Simpan</button>
-      </form>
+      </div>
     </div>
-</div>
-</div>
 
 
 
