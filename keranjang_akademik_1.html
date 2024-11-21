@@ -10,36 +10,40 @@
     <script src="resource/JS/searchLogic.js"></script>
 </head>
 <body >
-    <div class="navbar bg-[#0A254A] flex justify-between items-center">
-        <div class="flex items-center">
-          <img src="resource/Image/logo-ubb.png" alt="" class="size-16 w-20 ml-8"> <!--Logo Lapak UBB-->
-          <!-- Search Barang -->
-          <div class="">
-            <input type="search" name="" id="inputSearch" class="bg-white w-full lg:w-[800px] rounded-lg  h-10 ml-16 p-4"
-              placeholder="Search The Product Here">
-          </div>
-          <!-- Search Barang End-->
+   <!-- Navbar (Tetap) -->
+   <div class="navbar bg-[#0A254A] flex justify-between items-center px-4 md:px-8 h-20">
+    <div class="flex items-center space-x-4">
+      <img src="resource/Image/logo-ubb.png" alt="Logo" class="w-16 md:w-20">
+      <div class="flex-1">
+        <input
+          type="search"
+          id="inputSearch"
+          class="bg-white w-full sm:w-[500px] md:w-[600px] lg:w-[800px] rounded-lg h-10 px-4"
+          placeholder="Search The Product Here"
+        />
+      </div>
+    </div>
+    <div class="flex items-center space-x-4">
+      <img src="resource/Image/keranjang.png" alt="Keranjang" class="w-8 md:w-10 cursor-pointer" onclick="window.location.href='keranjang_akademik_1.html'">
+      <div tabindex="0" role="button" class="relative" onclick="toggleDropdown()">
+        <div class="w-8 md:w-10 rounded-full">
+          <img src="resource/Image/LOGO GUESS.png" alt="Profile Icon" />
         </div>
-    
-        <div class="flex items-center">
-          <img src="resource/Image/keranjang.png" alt="" class="size-12 mx-8"> <!--Logo Keranjang-->
-          <div tabindex="0" role="button" class="mr-8" onclick="toggleDropdown()">
-            <div class="w-10 rounded-full">
-              <img alt="Tailwind CSS Navbar component" src="resource/Image/LOGO GUESS.png" class="" />
-            </div>
-          </div>
-          <div id="dropdownMenu" class="absolute right-0 mt-56 w-48 bg-white rounded-lg shadow-lg hidden z-50" >
-            <ul class="py-2">
-              <a href="home.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a>
-                    <a href="mainframe.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
-                   <a href="tokoku.html">  <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a>
-                  <a href="index.html"> <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
-            </ul>
-          </div>
+        <div
+          id="dropdownMenu"
+          class="absolute right-0 mt-12 w-48 bg-white rounded-lg shadow-lg hidden z-50"
+        >
+          <ul class="py-2">
+            <a href="home.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Beranda</li></a>
+            <a href="mainframe.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li></a>
+            <a href="tokoku.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Toko Ku</li></a>
+            <a href="index.html"><li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Keluar</li></a>
+          </ul>
         </div>
-      </div> 
-    
-    <script src="resource/JS/drop_profile.js"></script>
+      </div>
+    </div>
+  </div>
+  <script src="resource/JS/drop_profile.js"></script>
 
     
     <!-- Box Keranjang -->
